@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/03/2018 10:03:47 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="domain.Carateristicas" table="carateristicas" catalog="empleos" optimistic-lock="version">
+        <id name="idCarateristicas" type="java.lang.Integer">
+            <column name="idCarateristicas" />
+            <generator class="identity" />
+        </id>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="45" not-null="true" />
+        </property>
+        <property name="grado" type="string">
+            <column name="grado" length="45" not-null="true" />
+        </property>
+        <set name="carateristicasoferentes" table="carateristicasoferente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Carateristicas_idCarateristicas" not-null="true" />
+            </key>
+            <one-to-many class="domain.Carateristicasoferente" />
+        </set>
+        <set name="carateristicaspuestos" table="carateristicaspuesto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Carateristicas_idCarateristicas" not-null="true" />
+            </key>
+            <one-to-many class="domain.Carateristicaspuesto" />
+        </set>
+    </class>
+</hibernate-mapping>

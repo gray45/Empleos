@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/03/2018 10:03:47 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="domain.Oferente" table="oferente" catalog="empleos" optimistic-lock="version">
+        <id name="idOferente" type="java.lang.Integer">
+            <column name="idOferente" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usuario" class="domain.Usuario" fetch="select">
+            <column name="Usuario_idUsuario" not-null="true" />
+        </many-to-one>
+        <property name="cedula" type="string">
+            <column name="cedula" length="45" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="primerApellido" type="string">
+            <column name="primerApellido" length="45" not-null="true" />
+        </property>
+        <property name="nacionalidad" type="string">
+            <column name="nacionalidad" length="45" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" not-null="true" />
+        </property>
+        <property name="lactitud" type="string">
+            <column name="lactitud" length="45" not-null="true" />
+        </property>
+        <property name="longitud" type="string">
+            <column name="longitud" length="45" not-null="true" />
+        </property>
+        <property name="contratado" type="int">
+            <column name="contratado" not-null="true" />
+        </property>
+        <set name="carateristicasoferentes" table="carateristicasoferente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Oferente_idOferente" not-null="true" />
+            </key>
+            <one-to-many class="domain.Carateristicasoferente" />
+        </set>
+        <set name="puestooferentes" table="puestooferente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Oferente_idOferente" not-null="true" />
+            </key>
+            <one-to-many class="domain.Puestooferente" />
+        </set>
+    </class>
+</hibernate-mapping>
