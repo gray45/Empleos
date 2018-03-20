@@ -8,9 +8,9 @@
             <column name="idPuesto" />
             <generator class="identity" />
         </id>
-        <many-to-one name="empresa" class="domain.Empresa" fetch="select">
+        <property name="empresa" type="java.lang.Integer">
             <column name="Empresa_idEmpresa" not-null="true" />
-        </many-to-one>
+        </property>
         <property name="descripcion" type="string">
             <column name="descripcion" length="45" not-null="true" />
         </property>
@@ -23,17 +23,5 @@
         <property name="disponible" type="int">
             <column name="disponible" not-null="true" />
         </property>
-        <set name="puestooferentes" table="puestooferente" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="Puesto_idPuesto" not-null="true" />
-            </key>
-            <one-to-many class="domain.Puestooferente" />
-        </set>
-        <set name="carateristicaspuestos" table="carateristicaspuesto" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="Puesto_idPuesto" not-null="true" />
-            </key>
-            <one-to-many class="domain.Carateristicaspuesto" />
-        </set>
     </class>
 </hibernate-mapping>

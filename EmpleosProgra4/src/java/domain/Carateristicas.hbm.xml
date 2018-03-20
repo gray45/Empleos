@@ -14,17 +14,5 @@
         <property name="grado" type="string">
             <column name="grado" length="45" not-null="true" />
         </property>
-        <set name="carateristicasoferentes" table="carateristicasoferente" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="Carateristicas_idCarateristicas" not-null="true" />
-            </key>
-            <one-to-many class="domain.Carateristicasoferente" />
-        </set>
-        <set name="carateristicaspuestos" table="carateristicaspuesto" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="Carateristicas_idCarateristicas" not-null="true" />
-            </key>
-            <one-to-many class="domain.Carateristicaspuesto" />
-        </set>
     </class>
 </hibernate-mapping>

@@ -8,9 +8,9 @@
             <column name="idEmpresa" />
             <generator class="identity" />
         </id>
-        <many-to-one name="usuario" class="domain.Usuario" fetch="select">
+         <property name="usuario" type="java.lang.Integer">
             <column name="Usuario_idUsuario" not-null="true" />
-        </many-to-one>
+        </property>
         <property name="nombre" type="string">
             <column name="nombre" length="45" not-null="true" />
         </property>
@@ -32,11 +32,6 @@
         <property name="aprobada" type="string">
             <column name="Aprobada" length="45" not-null="true" />
         </property>
-        <set name="puestos" table="puesto" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="Empresa_idEmpresa" not-null="true" />
-            </key>
-            <one-to-many class="domain.Puesto" />
-        </set>
+        
     </class>
 </hibernate-mapping>

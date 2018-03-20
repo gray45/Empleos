@@ -12,7 +12,7 @@ public class Empresa  implements java.io.Serializable {
 
 
      private Integer idEmpresa;
-     private Usuario usuario;
+     private Integer usuario;
      private String nombre;
      private String lactitud;
      private String longitud;
@@ -20,13 +20,12 @@ public class Empresa  implements java.io.Serializable {
      private String telefono;
      private String descripcion;
      private String aprobada;
-     private Set puestos = new HashSet(0);
 
     public Empresa() {
     }
 
 	
-    public Empresa(Usuario usuario, String nombre, String lactitud, String longitud, String email, String telefono, String descripcion, String aprobada) {
+    public Empresa(Integer usuario, String nombre, String lactitud, String longitud, String email, String telefono, String descripcion, String aprobada) {
         this.usuario = usuario;
         this.nombre = nombre;
         this.lactitud = lactitud;
@@ -36,18 +35,8 @@ public class Empresa  implements java.io.Serializable {
         this.descripcion = descripcion;
         this.aprobada = aprobada;
     }
-    public Empresa(Usuario usuario, String nombre, String lactitud, String longitud, String email, String telefono, String descripcion, String aprobada, Set puestos) {
-       this.usuario = usuario;
-       this.nombre = nombre;
-       this.lactitud = lactitud;
-       this.longitud = longitud;
-       this.email = email;
-       this.telefono = telefono;
-       this.descripcion = descripcion;
-       this.aprobada = aprobada;
-       this.puestos = puestos;
-    }
-   
+    
+    
     public Integer getIdEmpresa() {
         return this.idEmpresa;
     }
@@ -55,11 +44,12 @@ public class Empresa  implements java.io.Serializable {
     public void setIdEmpresa(Integer idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
-    public Usuario getUsuario() {
+    
+    public Integer getUsuario() {
         return this.usuario;
     }
     
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Integer usuario) {
         this.usuario = usuario;
     }
     public String getNombre() {
@@ -111,14 +101,6 @@ public class Empresa  implements java.io.Serializable {
     public void setAprobada(String aprobada) {
         this.aprobada = aprobada;
     }
-    public Set getPuestos() {
-        return this.puestos;
-    }
-    
-    public void setPuestos(Set puestos) {
-        this.puestos = puestos;
-    }
-
 
 
 

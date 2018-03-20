@@ -12,34 +12,24 @@ public class Puesto  implements java.io.Serializable {
 
 
      private Integer idPuesto;
-     private Empresa empresa;
+     private Integer empresa;
      private String descripcion;
      private String sueldo;
      private String tipo;
      private int disponible;
-     private Set puestooferentes = new HashSet(0);
-     private Set carateristicaspuestos = new HashSet(0);
-
+     
     public Puesto() {
     }
 
 	
-    public Puesto(Empresa empresa, String descripcion, String sueldo, String tipo, int disponible) {
+    public Puesto(Integer empresa, String descripcion, String sueldo, String tipo, int disponible) {
         this.empresa = empresa;
         this.descripcion = descripcion;
         this.sueldo = sueldo;
         this.tipo = tipo;
         this.disponible = disponible;
     }
-    public Puesto(Empresa empresa, String descripcion, String sueldo, String tipo, int disponible, Set puestooferentes, Set carateristicaspuestos) {
-       this.empresa = empresa;
-       this.descripcion = descripcion;
-       this.sueldo = sueldo;
-       this.tipo = tipo;
-       this.disponible = disponible;
-       this.puestooferentes = puestooferentes;
-       this.carateristicaspuestos = carateristicaspuestos;
-    }
+    
    
     public Integer getIdPuesto() {
         return this.idPuesto;
@@ -48,11 +38,11 @@ public class Puesto  implements java.io.Serializable {
     public void setIdPuesto(Integer idPuesto) {
         this.idPuesto = idPuesto;
     }
-    public Empresa getEmpresa() {
+    public Integer getEmpresa() {
         return this.empresa;
     }
     
-    public void setEmpresa(Empresa empresa) {
+    public void setEmpresa(Integer empresa) {
         this.empresa = empresa;
     }
     public String getDescripcion() {
@@ -83,22 +73,6 @@ public class Puesto  implements java.io.Serializable {
     public void setDisponible(int disponible) {
         this.disponible = disponible;
     }
-    public Set getPuestooferentes() {
-        return this.puestooferentes;
-    }
-    
-    public void setPuestooferentes(Set puestooferentes) {
-        this.puestooferentes = puestooferentes;
-    }
-    public Set getCarateristicaspuestos() {
-        return this.carateristicaspuestos;
-    }
-    
-    public void setCarateristicaspuestos(Set carateristicaspuestos) {
-        this.carateristicaspuestos = carateristicaspuestos;
-    }
-
-
 
 
 }

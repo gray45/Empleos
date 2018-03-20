@@ -10,13 +10,13 @@ public class Carateristicaspuesto  implements java.io.Serializable {
 
 
      private Integer id;
-     private Carateristicas carateristicas;
-     private Puesto puesto;
+     private Integer carateristicas;
+     private Integer puesto;
 
     public Carateristicaspuesto() {
     }
 
-    public Carateristicaspuesto(Carateristicas carateristicas, Puesto puesto) {
+    public Carateristicaspuesto(Integer carateristicas, Integer puesto) {
        this.carateristicas = carateristicas;
        this.puesto = puesto;
     }
@@ -28,23 +28,20 @@ public class Carateristicaspuesto  implements java.io.Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public Carateristicas getCarateristicas() {
+    public Integer getCarateristicas() {
         return this.carateristicas;
     }
     
-    public void setCarateristicas(Carateristicas carateristicas) {
+    public void setCarateristicas(Integer carateristicas) {
         this.carateristicas = carateristicas;
     }
-    public Puesto getPuesto() {
+    public Integer getPuesto() {
         return this.puesto;
     }
     
-    public void setPuesto(Puesto puesto) {
+    public void setPuesto(Integer puesto) {
         this.puesto = puesto;
     }
-
-
-
 
 }
 

@@ -8,11 +8,14 @@
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="carateristicas" class="domain.Carateristicas" fetch="select">
-            <column name="Carateristicas_idCarateristicas" not-null="true" />
-        </many-to-one>
+         <property name="caracteristicas" type="java.lang.Integer">
+            <column name="Caracteristicas_idCaracteristicas" not-null="true" />
+        </property>
         <many-to-one name="puesto" class="domain.Puesto" fetch="select">
             <column name="Puesto_idPuesto" not-null="true" />
         </many-to-one>
+         <property name="puesto" type="java.lang.Integer">
+            <column name="Puesto_idPuesto" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

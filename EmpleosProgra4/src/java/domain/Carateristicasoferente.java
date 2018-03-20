@@ -10,13 +10,13 @@ public class Carateristicasoferente  implements java.io.Serializable {
 
 
      private Integer id;
-     private Carateristicas carateristicas;
-     private Oferente oferente;
+     private Integer carateristicas;
+     private Integer oferente;
 
     public Carateristicasoferente() {
     }
 
-    public Carateristicasoferente(Carateristicas carateristicas, Oferente oferente) {
+    public Carateristicasoferente(Integer carateristicas, Integer oferente) {
        this.carateristicas = carateristicas;
        this.oferente = oferente;
     }
@@ -28,22 +28,20 @@ public class Carateristicasoferente  implements java.io.Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public Carateristicas getCarateristicas() {
+    public Integer getCarateristicas() {
         return this.carateristicas;
     }
     
-    public void setCarateristicas(Carateristicas carateristicas) {
+    public void setCarateristicas(Integer carateristicas) {
         this.carateristicas = carateristicas;
     }
-    public Oferente getOferente() {
+    public Integer getOferente() {
         return this.oferente;
     }
     
-    public void setOferente(Oferente oferente) {
+    public void setOferente(Integer oferente) {
         this.oferente = oferente;
     }
-
-
 
 
 }
