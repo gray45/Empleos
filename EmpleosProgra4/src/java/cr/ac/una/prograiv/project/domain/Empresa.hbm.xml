@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/03/2018 10:03:47 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="empleos" name="cr.ac.una.prograiv.project.domain.Empresa" optimistic-lock="version" table="empresa">
+    <id name="idEmpresa" type="java.lang.Integer">
+      <column name="idEmpresa"/>
+      <generator class="identity"/>
+    </id>
+    <property name="usuario" type="java.lang.Integer">
+      <column name="Usuario_idUsuario" not-null="true"/>
+    </property>
+    <property name="nombre" type="string">
+      <column length="45" name="nombre" not-null="true"/>
+    </property>
+    <property name="lactitud" type="string">
+      <column length="45" name="lactitud" not-null="true"/>
+    </property>
+    <property name="longitud" type="string">
+      <column length="45" name="longitud" not-null="true"/>
+    </property>
+    <property name="email" type="string">
+      <column length="45" name="email" not-null="true"/>
+    </property>
+    <property name="telefono" type="string">
+      <column length="45" name="telefono" not-null="true"/>
+    </property>
+    <property name="descripcion" type="string">
+      <column length="45" name="descripcion" not-null="true"/>
+    </property>
+    <property name="aprobada" type="string">
+      <column length="45" name="Aprobada" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

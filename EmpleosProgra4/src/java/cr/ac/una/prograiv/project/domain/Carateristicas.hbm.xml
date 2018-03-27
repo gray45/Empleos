@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/03/2018 10:03:47 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="empleos" name="cr.ac.una.prograiv.project.domain.Carateristicas" optimistic-lock="version" table="carateristicas">
+    <id name="idCarateristicas" type="java.lang.Integer">
+      <column name="idCarateristicas"/>
+      <generator class="identity"/>
+    </id>
+    <property name="descripcion" type="string">
+      <column length="45" name="descripcion" not-null="true"/>
+    </property>
+    <property name="grado" type="string">
+      <column length="45" name="grado" not-null="true"/>
+    </property>
+    <property name="padre" type="java.lang.Integer">
+      <column name="padre" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

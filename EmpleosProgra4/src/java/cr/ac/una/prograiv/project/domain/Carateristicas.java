@@ -1,4 +1,4 @@
-package domain;
+package cr.ac.una.prograiv.project.domain;
 // Generated 20/03/2018 10:03:47 AM by Hibernate Tools 4.3.1
 
 
@@ -11,14 +11,24 @@ public class Carateristicas  implements java.io.Serializable {
      private Integer idCarateristicas;
      private String descripcion;
      private String grado;
+     private Integer padre;
     
     public Carateristicas() {
     }
 
 	
-    public Carateristicas(String descripcion, String grado) {
+    public Carateristicas(String descripcion, String grado, Integer padre) {
         this.descripcion = descripcion;
         this.grado = grado;
+        this.padre = padre;
+    }
+
+    public Integer getPadre() {
+        return padre;
+    }
+
+    public void setPadre(Integer padre) {
+        this.padre = padre;
     }
    
     public Integer getIdCarateristicas() {

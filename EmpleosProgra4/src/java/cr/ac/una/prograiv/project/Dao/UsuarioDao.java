@@ -3,21 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dao;
+package cr.ac.una.prograiv.project.Dao;
 
-import domain.Oferente;
+import cr.ac.una.prograiv.project.domain.Usuario;
 import java.util.List;
 import org.hibernate.HibernateException;
-import utils.HibernateUtil;
+import cr.ac.una.prograiv.project.utils.NewHibernateUtil;
 
 /**
  *
  * @author grave
  */
-public class OferenteDao extends HibernateUtil implements IBaseDao<Oferente, Integer> {
+public class UsuarioDao extends NewHibernateUtil implements IBaseDao<Usuario, Integer> {
 
     @Override
-    public void save(Oferente obj) {
+    public void save(Usuario obj) {
         try {
             iniciarOperacion();
             getSesion().save(obj);
@@ -32,7 +32,7 @@ public class OferenteDao extends HibernateUtil implements IBaseDao<Oferente, Int
     }
 
     @Override
-    public void merge(Oferente obj) {
+    public void merge(Usuario obj) {
         try {
             iniciarOperacion();
             getSesion().merge(obj);
@@ -46,12 +46,12 @@ public class OferenteDao extends HibernateUtil implements IBaseDao<Oferente, Int
     }
 
     @Override
-    public Oferente findByID(Integer key) {
-        Oferente chofer = null;
+    public Usuario findByID(Integer key) {
+        Usuario chofer = null;
 
         try {
             iniciarOperacion();
-            chofer = (Oferente) getSesion().get(Oferente.class, key);
+            chofer = (Usuario) getSesion().get(Usuario.class, key);
         } finally {
             getSesion().close();
         }
@@ -59,7 +59,7 @@ public class OferenteDao extends HibernateUtil implements IBaseDao<Oferente, Int
     }
 
     @Override
-    public void delete(Oferente obj) {
+    public void delete(Usuario obj) {
         try {
             iniciarOperacion();
             getSesion().delete(obj);
@@ -74,11 +74,11 @@ public class OferenteDao extends HibernateUtil implements IBaseDao<Oferente, Int
     }
 
     @Override
-    public List<Oferente> findAll() {
+    public List<Usuario> findAll() {
         try {
-            List<Oferente> choferes;
+            List<Usuario> choferes;
             iniciarOperacion();
-            choferes = (List<Oferente>) getSesion().createQuery("FROM Oferente").list();
+            choferes = (List<Usuario>) getSesion().createQuery("FROM Usuario").list();
             return choferes;
         } catch (HibernateException he) {
             manejarException(he);
@@ -91,7 +91,7 @@ public class OferenteDao extends HibernateUtil implements IBaseDao<Oferente, Int
     @Override
     public List findByQuery(String query) {
         try {
-            List<Oferente> choferes;
+            List<Usuario> choferes;
             iniciarOperacion();
             choferes =  getSesion().createQuery(query).list();
             return choferes;

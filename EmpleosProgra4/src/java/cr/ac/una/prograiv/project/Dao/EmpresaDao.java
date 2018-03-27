@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dao;
+package cr.ac.una.prograiv.project.Dao;
 
-import domain.Empresa;
+import cr.ac.una.prograiv.project.domain.Empresa;
 import java.util.List;
 import org.hibernate.HibernateException;
-import utils.HibernateUtil;
+import cr.ac.una.prograiv.project.utils.NewHibernateUtil;
 
 /**
  *
  * @author grave
  */
-public class EmpresaDao extends HibernateUtil implements IBaseDao<Empresa, Integer> {
+public class EmpresaDao extends NewHibernateUtil implements IBaseDao<Empresa, Integer> {
 
     @Override
     public void save(Empresa obj) {

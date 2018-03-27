@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utils;
+package cr.ac.una.prograiv.project.utils;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,7 +17,7 @@ import org.hibernate.Transaction;
  *
  * @author grave
  */
-public class HibernateUtil {
+public class NewHibernateUtil {
 
     private static final SessionFactory sessionFactory;
     private Session sesion;
@@ -36,7 +36,7 @@ public class HibernateUtil {
     }
     
     public void iniciarOperacion() throws HibernateException{
-       sesion= HibernateUtil.getSessionFactory().openSession(); // toma toda la config abre sesion, inicia una transaccion por ejemplo cajero
+       sesion= NewHibernateUtil.getSessionFactory().openSession(); // toma toda la config abre sesion, inicia una transaccion por ejemplo cajero
        transac= sesion.beginTransaction();
                
     }
