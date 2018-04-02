@@ -7,6 +7,7 @@ package cr.ac.una.prograiv.project.bl;
 
 import cr.ac.una.prograiv.project.Dao.EmpresaDao;
 import cr.ac.una.prograiv.project.Dao.IBaseDao;
+import cr.ac.una.prograiv.project.Dao.OferenteDao;
 import cr.ac.una.prograiv.project.Dao.UsuarioDao;
 import java.util.LinkedHashMap;
 
@@ -20,8 +21,9 @@ public class BaseBl {
 
     public BaseBl() {
         daos = new LinkedHashMap();
-        daos.put("domain.Usuario", new UsuarioDao());
-        daos.put("domain.Empresa", new EmpresaDao());
+        daos.put("cr.ac.una.prograiv.project.Dao.Usuario", new UsuarioDao());
+        daos.put("cr.ac.una.prograiv.project.Dao.Empresa", new EmpresaDao());
+        daos.put("cr.ac.una.prograiv.project.Dao.Oferente", new OferenteDao());
     }
 
     /**
@@ -29,7 +31,7 @@ public class BaseBl {
      * @param className
      * @return
      */
-    public IBaseDao getDAO(String className) {
+    public IBaseDao getDao(String className) {
         return daos.get(className);
     }
 }

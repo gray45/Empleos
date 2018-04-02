@@ -45,13 +45,13 @@ Contributor(s):
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/empleos?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <mapping resource="cr/ac/una/prograiv/project/domain/Carateristicas.hbm.xml"/>
+    <mapping resource="cr/ac/una/prograiv/project/domain/Carateristicaspuesto.hbm.xml"/>
     <mapping resource="cr/ac/una/prograiv/project/domain/Empresa.hbm.xml"/>
     <mapping resource="cr/ac/una/prograiv/project/domain/Oferente.hbm.xml"/>
+    <mapping resource="cr/ac/una/prograiv/project/domain/Carateristicas.hbm.xml"/>
     <mapping resource="cr/ac/una/prograiv/project/domain/Carateristicasoferente.hbm.xml"/>
-    <mapping resource="cr/ac/una/prograiv/project/domain/Carateristicaspuesto.hbm.xml"/>
+    <mapping resource="cr/ac/una/prograiv/project/domain/Usuario.hbm.xml"/>
     <mapping resource="cr/ac/una/prograiv/project/domain/Puesto.hbm.xml"/>
     <mapping resource="cr/ac/una/prograiv/project/domain/Puestooferente.hbm.xml"/>
-    <mapping resource="cr/ac/una/prograiv/project/domain/Usuario.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

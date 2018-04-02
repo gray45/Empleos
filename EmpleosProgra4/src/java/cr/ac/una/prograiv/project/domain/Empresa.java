@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.project.domain;
-// Generated 20/03/2018 10:03:47 AM by Hibernate Tools 4.3.1
+// Generated 29/03/2018 02:50:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -12,7 +12,7 @@ public class Empresa  implements java.io.Serializable {
 
 
      private Integer idEmpresa;
-     private Integer usuario;
+     private Usuario usuario;
      private String nombre;
      private String lactitud;
      private String longitud;
@@ -20,12 +20,13 @@ public class Empresa  implements java.io.Serializable {
      private String telefono;
      private String descripcion;
      private String aprobada;
+     private Set puestos = new HashSet(0);
 
     public Empresa() {
     }
 
 	
-    public Empresa(Integer usuario, String nombre, String lactitud, String longitud, String email, String telefono, String descripcion, String aprobada) {
+    public Empresa(Usuario usuario, String nombre, String lactitud, String longitud, String email, String telefono, String descripcion, String aprobada) {
         this.usuario = usuario;
         this.nombre = nombre;
         this.lactitud = lactitud;
@@ -35,8 +36,18 @@ public class Empresa  implements java.io.Serializable {
         this.descripcion = descripcion;
         this.aprobada = aprobada;
     }
-    
-    
+    public Empresa(Usuario usuario, String nombre, String lactitud, String longitud, String email, String telefono, String descripcion, String aprobada, Set puestos) {
+       this.usuario = usuario;
+       this.nombre = nombre;
+       this.lactitud = lactitud;
+       this.longitud = longitud;
+       this.email = email;
+       this.telefono = telefono;
+       this.descripcion = descripcion;
+       this.aprobada = aprobada;
+       this.puestos = puestos;
+    }
+   
     public Integer getIdEmpresa() {
         return this.idEmpresa;
     }
@@ -44,12 +55,11 @@ public class Empresa  implements java.io.Serializable {
     public void setIdEmpresa(Integer idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
-    
-    public Integer getUsuario() {
+    public Usuario getUsuario() {
         return this.usuario;
     }
     
-    public void setUsuario(Integer usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
     public String getNombre() {
@@ -101,6 +111,14 @@ public class Empresa  implements java.io.Serializable {
     public void setAprobada(String aprobada) {
         this.aprobada = aprobada;
     }
+    public Set getPuestos() {
+        return this.puestos;
+    }
+    
+    public void setPuestos(Set puestos) {
+        this.puestos = puestos;
+    }
+
 
 
 

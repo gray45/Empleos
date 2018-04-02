@@ -5,6 +5,7 @@
  */
 package cr.ac.una.prograiv.project.bl;
 
+import cr.ac.una.prograiv.project.Dao.UsuarioDao;
 import cr.ac.una.prograiv.project.domain.Usuario;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,14 +16,16 @@ import java.util.List;
  */
 public class UsuarioBl extends BaseBl implements iBaseBl <Usuario,Integer>{
 
-    @Override
+   @Override
     public void save(Usuario obj) {
-        this.getDAO( obj.getClass().getName()).save(obj);
+        UsuarioDao usu = new UsuarioDao();
+        usu.save(obj);
+       // this.getDao(obj.getClass().getName()).save(obj);
     }
 
     @Override
     public void merge(Usuario obj) {
-        this.getDAO(obj.getClass().getName()).merge(obj);
+        this.getDao(obj.getClass().getName()).merge(obj);
     }
 
     
@@ -40,26 +43,26 @@ public class UsuarioBl extends BaseBl implements iBaseBl <Usuario,Integer>{
     
     @Override
     public Usuario findByID(Integer key) {
-        return (Usuario) this.getDAO("domain.Usuario").findByID(key);
+        return (Usuario) this.getDao("domain.Usuario").findByID(key);
     }
 
     @Override
     public void delete(Usuario obj) {
-      this.getDAO(obj.getClass().getName()).delete(obj);         
+      this.getDao(obj.getClass().getName()).delete(obj);         
     }
 
     @Override
     public List<Usuario> findAll() {
-        return this.getDAO("domain.Usuario").findAll();
+        return this.getDao("domain.Usuario").findAll();
     }
 
     @Override
     public List<Usuario> findByQuery(String query) {
-        return this.getDAO("domain.Usuario").findByQuery(query);
+        return this.getDao("domain.Usuario").findByQuery(query);
     }
     
     @Override
     public List findHQLQuery(String query) {
-        return this.getDAO("domain.Usuario").findHQLQuery(query);
+        return this.getDao("domain.Usuario").findHQLQuery(query);
     }
 }

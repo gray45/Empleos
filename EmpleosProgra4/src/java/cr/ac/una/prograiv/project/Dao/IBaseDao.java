@@ -13,6 +13,7 @@ import java.util.List;
  */
 
     public interface IBaseDao <T,K>{
+   
     public abstract void save(T obj);
     public abstract void merge(T obj);
     public abstract T findByID(K key);
@@ -20,5 +21,6 @@ import java.util.List;
     public abstract List<T> findAll();
     public abstract List<T> findByQuery(String query);
     public abstract List findHQLQuery(String query);
+
 }
 

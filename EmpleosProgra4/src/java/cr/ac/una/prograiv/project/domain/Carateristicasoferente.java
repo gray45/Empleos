@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.project.domain;
-// Generated 20/03/2018 10:03:47 AM by Hibernate Tools 4.3.1
+// Generated 29/03/2018 02:50:19 PM by Hibernate Tools 4.3.1
 
 
 
@@ -10,13 +10,13 @@ public class Carateristicasoferente  implements java.io.Serializable {
 
 
      private Integer id;
-     private Integer carateristicas;
-     private Integer oferente;
+     private Carateristicas carateristicas;
+     private Oferente oferente;
 
     public Carateristicasoferente() {
     }
 
-    public Carateristicasoferente(Integer carateristicas, Integer oferente) {
+    public Carateristicasoferente(Carateristicas carateristicas, Oferente oferente) {
        this.carateristicas = carateristicas;
        this.oferente = oferente;
     }
@@ -28,20 +28,22 @@ public class Carateristicasoferente  implements java.io.Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public Integer getCarateristicas() {
+    public Carateristicas getCarateristicas() {
         return this.carateristicas;
     }
     
-    public void setCarateristicas(Integer carateristicas) {
+    public void setCarateristicas(Carateristicas carateristicas) {
         this.carateristicas = carateristicas;
     }
-    public Integer getOferente() {
+    public Oferente getOferente() {
         return this.oferente;
     }
     
-    public void setOferente(Integer oferente) {
+    public void setOferente(Oferente oferente) {
         this.oferente = oferente;
     }
+
+
 
 
 }

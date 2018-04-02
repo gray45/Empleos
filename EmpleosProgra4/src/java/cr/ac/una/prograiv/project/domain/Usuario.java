@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.project.domain;
-// Generated 20/03/2018 10:03:47 AM by Hibernate Tools 4.3.1
+// Generated 29/03/2018 02:50:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -15,7 +15,9 @@ public class Usuario  implements java.io.Serializable {
      private String userName;
      private String password;
      private String tipo;
-    
+     private Set oferentes = new HashSet(0);
+     private Set empresas = new HashSet(0);
+
     public Usuario() {
     }
 
@@ -24,6 +26,13 @@ public class Usuario  implements java.io.Serializable {
         this.userName = userName;
         this.password = password;
         this.tipo = tipo;
+    }
+    public Usuario(String userName, String password, String tipo, Set oferentes, Set empresas) {
+       this.userName = userName;
+       this.password = password;
+       this.tipo = tipo;
+       this.oferentes = oferentes;
+       this.empresas = empresas;
     }
    
     public Integer getIdUsuario() {
@@ -54,7 +63,23 @@ public class Usuario  implements java.io.Serializable {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    public Set getOferentes() {
+        return this.oferentes;
+    }
     
+    public void setOferentes(Set oferentes) {
+        this.oferentes = oferentes;
+    }
+    public Set getEmpresas() {
+        return this.empresas;
+    }
+    
+    public void setEmpresas(Set empresas) {
+        this.empresas = empresas;
+    }
+
+
+
 
 }
 

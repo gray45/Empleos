@@ -15,9 +15,9 @@ import org.hibernate.Transaction;
  * Hibernate Utility class with a convenient method to get Session Factory
  * object.
  *
- * @author grave
+ * @author graven
  */
-public class NewHibernateUtil {
+public class HibernateUtil {
 
     private static final SessionFactory sessionFactory;
     private Session sesion;
@@ -36,7 +36,7 @@ public class NewHibernateUtil {
     }
     
     public void iniciarOperacion() throws HibernateException{
-       sesion= NewHibernateUtil.getSessionFactory().openSession(); // toma toda la config abre sesion, inicia una transaccion por ejemplo cajero
+       sesion= HibernateUtil.getSessionFactory().openSession(); // toma toda la config abre sesion, inicia una transaccion por ejemplo cajero
        transac= sesion.beginTransaction();
                
     }

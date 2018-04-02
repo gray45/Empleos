@@ -8,13 +8,13 @@ package cr.ac.una.prograiv.project.Dao;
 import cr.ac.una.prograiv.project.domain.Usuario;
 import java.util.List;
 import org.hibernate.HibernateException;
-import cr.ac.una.prograiv.project.utils.NewHibernateUtil;
+import cr.ac.una.prograiv.project.utils.HibernateUtil;
 
 /**
  *
  * @author grave
  */
-public class UsuarioDao extends NewHibernateUtil implements IBaseDao<Usuario, Integer> {
+public class UsuarioDao extends HibernateUtil implements IBaseDao<Usuario, Integer> {
 
     @Override
     public void save(Usuario obj) {
@@ -118,4 +118,5 @@ public class UsuarioDao extends NewHibernateUtil implements IBaseDao<Usuario, In
         }
         
     }
+
 }

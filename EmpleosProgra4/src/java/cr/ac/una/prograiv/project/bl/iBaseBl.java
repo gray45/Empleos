@@ -12,7 +12,7 @@ import java.util.List;
  * @author grave
  */
 public interface iBaseBl<T,K>{
-    public abstract void save(T obj);
+   public abstract void save(T obj);
     public abstract void merge(T obj);
     public abstract T findByID(K key);
     public abstract void delete(T obj);

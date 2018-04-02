@@ -8,15 +8,15 @@ package cr.ac.una.prograiv.project.Dao;
 import cr.ac.una.prograiv.project.domain.Oferente;
 import java.util.List;
 import org.hibernate.HibernateException;
-import cr.ac.una.prograiv.project.utils.NewHibernateUtil;
+import cr.ac.una.prograiv.project.utils.HibernateUtil;
 
 /**
  *
  * @author grave
  */
-public class OferenteDao extends NewHibernateUtil implements IBaseDao<Oferente, Integer> {
+public class OferenteDao extends HibernateUtil implements IBaseDao<Oferente, Integer> {
 
-    @Override
+   @Override
     public void save(Oferente obj) {
         try {
             iniciarOperacion();
@@ -118,4 +118,5 @@ public class OferenteDao extends NewHibernateUtil implements IBaseDao<Oferente, 
         }
         
     }
+
 }

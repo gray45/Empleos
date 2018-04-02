@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.project.domain;
-// Generated 20/03/2018 10:03:47 AM by Hibernate Tools 4.3.1
+// Generated 29/03/2018 02:50:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -12,7 +12,7 @@ public class Oferente  implements java.io.Serializable {
 
 
      private Integer idOferente;
-     private Integer usuario;
+     private Usuario usuario;
      private String cedula;
      private String nombre;
      private String primerApellido;
@@ -22,12 +22,14 @@ public class Oferente  implements java.io.Serializable {
      private String lactitud;
      private String longitud;
      private int contratado;
+     private Set carateristicasoferentes = new HashSet(0);
+     private Set puestooferentes = new HashSet(0);
 
     public Oferente() {
     }
 
 	
-    public Oferente(Integer usuario, String cedula, String nombre, String primerApellido, String nacionalidad, String telefono, String email, String lactitud, String longitud, int contratado) {
+    public Oferente(Usuario usuario, String cedula, String nombre, String primerApellido, String nacionalidad, String telefono, String email, String lactitud, String longitud, int contratado) {
         this.usuario = usuario;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -39,6 +41,20 @@ public class Oferente  implements java.io.Serializable {
         this.longitud = longitud;
         this.contratado = contratado;
     }
+    public Oferente(Usuario usuario, String cedula, String nombre, String primerApellido, String nacionalidad, String telefono, String email, String lactitud, String longitud, int contratado, Set carateristicasoferentes, Set puestooferentes) {
+       this.usuario = usuario;
+       this.cedula = cedula;
+       this.nombre = nombre;
+       this.primerApellido = primerApellido;
+       this.nacionalidad = nacionalidad;
+       this.telefono = telefono;
+       this.email = email;
+       this.lactitud = lactitud;
+       this.longitud = longitud;
+       this.contratado = contratado;
+       this.carateristicasoferentes = carateristicasoferentes;
+       this.puestooferentes = puestooferentes;
+    }
    
     public Integer getIdOferente() {
         return this.idOferente;
@@ -47,11 +63,11 @@ public class Oferente  implements java.io.Serializable {
     public void setIdOferente(Integer idOferente) {
         this.idOferente = idOferente;
     }
-    public Integer getUsuario() {
+    public Usuario getUsuario() {
         return this.usuario;
     }
     
-    public void setUsuario(Integer usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
     public String getCedula() {
@@ -117,6 +133,21 @@ public class Oferente  implements java.io.Serializable {
     public void setContratado(int contratado) {
         this.contratado = contratado;
     }
+    public Set getCarateristicasoferentes() {
+        return this.carateristicasoferentes;
+    }
+    
+    public void setCarateristicasoferentes(Set carateristicasoferentes) {
+        this.carateristicasoferentes = carateristicasoferentes;
+    }
+    public Set getPuestooferentes() {
+        return this.puestooferentes;
+    }
+    
+    public void setPuestooferentes(Set puestooferentes) {
+        this.puestooferentes = puestooferentes;
+    }
+
 
 
 

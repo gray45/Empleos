@@ -28,7 +28,7 @@ public class TestUsuario {
     }
 
     public static void saveUsuario() {
-        for(int i =1; i<30; i++){
+        for(int i =1; i<2; i++){
         Usuario usu1 = new Usuario("gray", "12345","1");
         UsuarioBl bl1 = new UsuarioBl();
         bl1.save(usu1);
@@ -53,17 +53,17 @@ public class TestUsuario {
         Usuario usu1 = new Usuario();
  //       usu1.setPkIdUsuario(12);
         UsuarioBl bl1 = new UsuarioBl();
-        bl1.delete(usu1);
+     //   bl1.delete(usu1);
 
     }
 
     public static void findAllUsuario() {
         List<Usuario> usuarios;
         UsuarioBl bl = new UsuarioBl();
-        usuarios = bl.findAll();
-        usuarios.forEach((aux) -> {
-            System.out.println(aux.toString());
-        });
+       // usuarios = bl.findAll();
+        //usuarios.forEach((aux) -> {
+          //  System.out.println(aux.toString());
+        //});
     }
 
    /* public static void mergeUsuario(Integer key) {
@@ -90,7 +90,7 @@ public class TestUsuario {
     public static void findcedula(String key) {
         UsuarioBl bl = new UsuarioBl();
         List<Usuario> c;
-        c = bl.findByQuery("FROM Usuario WHERE nombreUsuario=" + "'" + key + "'");
-        System.out.println(c.size());
+        //c = bl.findByQuery("FROM Usuario WHERE nombreUsuario=" + "'" + key + "'");
+    //    System.out.println(c.size());
     }
 }
