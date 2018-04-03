@@ -25,7 +25,9 @@ public class UsuarioBl extends BaseBl implements iBaseBl <Usuario,Integer>{
 
     @Override
     public void merge(Usuario obj) {
-        this.getDao(obj.getClass().getName()).merge(obj);
+        UsuarioDao usu = new UsuarioDao();
+        usu.save(obj);
+       // this.getDao(obj.getClass().getName()).merge(obj);
     }
 
     
