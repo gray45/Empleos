@@ -31,7 +31,7 @@ public class UsuarioBl extends BaseBl implements iBaseBl <Usuario,Integer>{
     }
 
     
-    public List<Usuario> findByCedula(String userName) {
+    /*public List<Usuario> findByCedula(String userName) {
         List<Usuario> drivers = findAll();
         List<Usuario> choferes = new LinkedList<>();
         for (Usuario aux : drivers) {
@@ -41,30 +41,40 @@ public class UsuarioBl extends BaseBl implements iBaseBl <Usuario,Integer>{
             return choferes;
         }
         return null;
-    }
+    }*/
     
     @Override
     public Usuario findByID(Integer key) {
-        return (Usuario) this.getDao("domain.Usuario").findByID(key);
+        UsuarioDao usu = new UsuarioDao();
+        return usu.findByID(key);
+       // return (Usuario) this.getDao("domain.Usuario").findByID(key);
     }
 
     @Override
     public void delete(Usuario obj) {
-      this.getDao(obj.getClass().getName()).delete(obj);         
+        UsuarioDao usu = new UsuarioDao();
+        usu.delete(obj);
+      //this.getDao(obj.getClass().getName()).delete(obj);         
     }
 
     @Override
     public List<Usuario> findAll() {
-        return this.getDao("domain.Usuario").findAll();
+        UsuarioDao usu = new UsuarioDao();
+        return usu.findAll();
+        //return this.getDao("domain.Usuario").findAll();
     }
 
     @Override
     public List<Usuario> findByQuery(String query) {
-        return this.getDao("domain.Usuario").findByQuery(query);
+        UsuarioDao usu = new UsuarioDao();
+        return usu.findByQuery(query);
+        //return this.getDao("domain.Usuario").findByQuery(query);
     }
     
     @Override
     public List findHQLQuery(String query) {
-        return this.getDao("domain.Usuario").findHQLQuery(query);
+        UsuarioDao usu = new UsuarioDao();
+        return usu.findHQLQuery(query);
+        //return this.getDao("domain.Usuario").findHQLQuery(query);
     }
 }
