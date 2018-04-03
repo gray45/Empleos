@@ -5,6 +5,7 @@
  */
 package cr.ac.una.prograiv.project.test;
 
+import cr.ac.una.prograiv.project.Dao.UsuarioDao;
 import cr.ac.una.prograiv.project.bl.UsuarioBl;
 import cr.ac.una.prograiv.project.domain.Usuario;
 import java.util.Date;
@@ -17,13 +18,13 @@ import java.util.List;
 public class TestUsuario {
 
     public static void main(String[] args) {
-        saveUsuario();
-        //mergeUsuario(1);
+        //saveUsuario();
+        mergeUsuario(3);
         //deleteUsuario();
         //findAllUsuario();
         //findIdUsuario(17);
-       // findByName("ASAS");
-       // findcedula("greivin");
+        //findByName("gray");
+        //findNombre("gray");
 
     }
 
@@ -51,27 +52,35 @@ public class TestUsuario {
 
     public static void deleteUsuario() {
         Usuario usu1 = new Usuario();
- //       usu1.setPkIdUsuario(12);
-        UsuarioBl bl1 = new UsuarioBl();
-     //   bl1.delete(usu1);
+        usu1.setIdUsuario(4);
+        UsuarioDao o= new UsuarioDao();
+        o.delete(usu1);        
+        System.out.println("Usuario Eliimnado con exito");
+
+        
 
     }
 
     public static void findAllUsuario() {
         List<Usuario> usuarios;
-        UsuarioBl bl = new UsuarioBl();
-       // usuarios = bl.findAll();
-        //usuarios.forEach((aux) -> {
-          //  System.out.println(aux.toString());
-        //});
+        UsuarioDao bl = new UsuarioDao();
+        usuarios = bl.findAll();
+        // usuarios = bl.findAll();
+        usuarios.forEach((aux) -> {
+            System.out.println(aux.getUserName());
+        });
     }
 
-   /* public static void mergeUsuario(Integer key) {
-        Usuario usu = new Usuario(key, "Usu1", "123","123", "Oscar", "Carmona", "Mora", "Nadie@gmail.com", new Date(), "8888888","Dirección", 1, new Date(), "Nadie");
-        UsuarioBl bl = new UsuarioBl();
+    public static void mergeUsuario(Integer key) {
+        UsuarioDao d=new UsuarioDao();
+        Usuario del=new Usuario();
+        del.setIdUsuario(key);
+        Usuario usu = new Usuario("Daniel","123","123");
+        usu.setIdUsuario(key);
+        UsuarioDao bl = new UsuarioDao();
         bl.merge(usu);
     }
-
+/*
     public static void findIdUsuario(Integer key) {
         UsuarioBl bl = new UsuarioBl();
         Usuario u;
@@ -80,17 +89,17 @@ public class TestUsuario {
 
     }
     
-   /* public static void findByName(String name){
-        UsuarioBl bl = new UsuarioBl();
+    public static void findByName(String name){
+        UsuarioDao bl = new UsuarioDao();
         Usuario u;
         u = bl.findByName(name);
         System.out.println(u.getPkIdUsuario());
-    }*/
-    
-    public static void findcedula(String key) {
-        UsuarioBl bl = new UsuarioBl();
+    }
+    */
+    public static void findNombre(String key) {
+        UsuarioDao bl = new UsuarioDao();
         List<Usuario> c;
-        //c = bl.findByQuery("FROM Usuario WHERE nombreUsuario=" + "'" + key + "'");
-    //    System.out.println(c.size());
+        c = bl.findByQuery("Select * FROM usuario WHERE userName= " + " ' " + key + " ';");
+        System.out.println(c.size());
     }
 }

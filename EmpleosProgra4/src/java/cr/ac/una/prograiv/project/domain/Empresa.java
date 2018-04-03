@@ -35,6 +35,7 @@ public class Empresa  implements java.io.Serializable {
         this.telefono = telefono;
         this.descripcion = descripcion;
         this.aprobada = aprobada;
+        puestos=new HashSet(0);
     }
     public Empresa(Usuario usuario, String nombre, String lactitud, String longitud, String email, String telefono, String descripcion, String aprobada, Set puestos) {
        this.usuario = usuario;
