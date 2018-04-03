@@ -19,9 +19,9 @@ public class TestUsuario {
 
     public static void main(String[] args) {
         //saveUsuario();
-        mergeUsuario(3);
+       // mergeUsuario(3);
         //deleteUsuario();
-        //findAllUsuario();
+        findAllUsuario();
         //findIdUsuario(17);
         //findByName("gray");
         //findNombre("gray");
