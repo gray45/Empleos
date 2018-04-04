@@ -17,6 +17,7 @@
         
     </head>
     <body>
+        <%@ include file="Header.jsp" %>
         <form method="post" action="Oferenteadd">
             <table>
             <tr>

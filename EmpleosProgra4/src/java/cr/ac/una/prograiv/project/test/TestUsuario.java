@@ -21,10 +21,11 @@ public class TestUsuario {
         //saveUsuario();
        // mergeUsuario(3);
         //deleteUsuario();
-        findAllUsuario();
+       // findAllUsuario();
         //findIdUsuario(17);
         //findByName("gray");
         //findNombre("gray");
+        findquery("gray","12345");
 
     }
 
@@ -101,5 +102,12 @@ public class TestUsuario {
         List<Usuario> c;
         c = bl.findByQuery("Select * FROM usuario WHERE userName= " + " ' " + key + " ';");
         System.out.println(c.size());
+    }
+    
+    public static void findquery(String nombre , String password ){
+        UsuarioBl usu = new UsuarioBl();
+        Usuario usuaux = new Usuario();
+    usuaux =(Usuario) usu.findByQuery("FROM Usuario WHERE userName=" + "'" + nombre+ "'" + "AND" + " password=" +"'" + password + "'").get(0);
+     System.out.println(usuaux.getUserName());
     }
 }

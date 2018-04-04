@@ -9,6 +9,7 @@ import cr.ac.una.prograiv.project.bl.UsuarioBl;
 import cr.ac.una.prograiv.project.domain.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,11 +27,11 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
  
        switch(request.getServletPath()){
-        case "/Login":
-            this.doLogin(request,response);
-            break;
         case "/Logout":
             this.doLogout(request,response);
+            break;
+        case "/Login":
+            this.doLogin(request,response);
             break;
     }
     }
@@ -84,28 +85,32 @@ String username   = request.getParameter("username");
 String password   = request.getParameter("password");
 
 
-Usuario usuario = new Usuario();
+Usuario usuario = null;
 Usuario usuaux = new Usuario();
 
-usuario.setUserName(username);
-usuario.setPassword(password);
-
-
-
+//usuario.setUserName(username);
+//usuario.setPassword(password);
 
 UsuarioBl usu = new UsuarioBl();
 
-
-  usuaux =(Usuario) usu.findByQuery("FROM Usuario WHERE userName=" + "'" + usuario.getUserName()+ "'" + "AND" + "password=" +"'" + usuario.getPassword() + "'").get(0);
+List<Usuario> usuarios = usu.findByQuery("FROM Usuario WHERE userName=" + "'" + username+ "'" + "AND" + " password=" +"'" + password + "'");
+if(!usuarios.isEmpty()){
+  usuaux =(Usuario) usuarios.get(0);
   s.setAttribute("usuario", usuaux);
-  if((usuaux.getUserName() == usuario.getUserName())&&(usuaux.getPassword() == usuario.getPassword())){
+}
+  if(usuaux.getUserName() != null){
   
-  
-    response.sendRedirect("Menú.jsp");
+  //request.getRequestDispatcher("registrarOferente.jsp").forward( request, response);
+    response.sendRedirect("registrarOferente.jsp");
         
 }else{
-    
-     response.sendRedirect("Login.jsp");
+    s.setAttribute("usuario", usuario);
+      //request.getRequestDispatcher("Usuarios.jsp").forward( request, response);
+      request.setAttribute("error","Credenciales incorrectas..");
+	request.getRequestDispatcher("Error.jsp").
+                
+     //response.sendRedirect(""Error.jsp");
+     forward( request, response);
     
     
 }
