@@ -12,33 +12,40 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/css.css" />
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/botsnip.css" />
+<link rel="stylesheet" href="css/slidr.css" type="text/css"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
         <title>Lista de Empresas</title>
     </head>
     <body>
         <div id="wrapper">
-        <div id="header">
+        <div class="col-lg-12" id="header">
             <p>This is the Header</p>
         </div>
-        <div id="leftcolumn">
-            <%@include file="menu.jspf" %>
-        </div>
-        <div id="content">
-            <% 
+        <div class="col-lg-12">
+            <div class="col-md-3" id="leftcolumn">
+                <%@include file="menu.jspf" %>
+            </div>
+            <div class="col-md-8" id="content">
+               <% 
                 List<Empresa> empresas;
                 EmpresaDao da=new EmpresaDao();
                 empresas=da.findAll();
             %>
-            <table>
+            <table class="table table-striped">
                 <tr>
-                    <td>ID</td>
-                    <td>Nombre</td>
-                    <td>Latitud</td>
-                    <td>Longitud</td>
-                    <td>Email</td>
-                    <td>Telefono</td>
-                    <td>Descripcion</td>
-                    <td>Aprobada</td>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Latitud</th>
+                    <th scope="col">Longitud</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Aprobada</th>
                     
                 </tr>
                 <%
@@ -82,7 +89,14 @@
                     }
                 %>
             </table>
+            </div>
+            
         </div>
+        
     </div>
+        
+        
+        
+      
     </body>
 </html>
