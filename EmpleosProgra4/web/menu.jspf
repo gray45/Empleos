@@ -1,0 +1,9 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<a href="registrarOferente.jsp"><button>Agregar Oferente</button> </a>
+<a href="listaOferentes.jsp"><button>Listar Oferente</button> </a>
+<a href="registrarEmpresa.jsp"><button>Registrar Empresa</button> </a>
+<a href="listaEmpresas.jsp"><button>Listar Empresa</button> </a>
+<a href="registrarUsuario.jsp"><button>Registrar Usuario</button> </a>
+<a href="listaUsuarios.jsp"><button>Lista Usuario</button> </a>

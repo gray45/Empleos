@@ -59,9 +59,7 @@ public class Oferenteadd extends HttpServlet {
             
             response.setContentType("text/html;charset=UTF-8");
             try(PrintWriter out= response.getWriter()){
-                //out.println("HOla: "+ hola);
-                System.out.println("Se guardo el oferente");
-                response.sendRedirect("index.html");
+                response.sendRedirect("index.jsp");
             }
     }
 

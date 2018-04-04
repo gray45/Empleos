@@ -6,19 +6,26 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title> 
+        <title>Registrar Oferente</title> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/css.css" />
         
         
     </head>
     <body>
-        <%@ include file="Header.jsp" %>
-        <form method="post" action="Oferenteadd">
+    <div id="wrapper">
+        <div id="header">
+            <p>This is the Header</p>
+        </div>
+        <div id="leftcolumn">
+           <%@include file="menu.jspf" %>
+        </div>
+        <div id="content">
+            <form method="post" action="Oferenteadd">
             <table>
             <tr>
                   <td>Cedula</td>   
@@ -68,5 +75,7 @@
             </table>
             
         </form>
-    </body>
+        </div>
+    </div>
+   
 </html>
