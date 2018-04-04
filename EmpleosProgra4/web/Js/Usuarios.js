@@ -78,7 +78,7 @@ function registraUsuario() {
     if (validar()) {
         if (validarContrasenas()) {                       
             $.ajax({
-                url: '../UsuarioServlet',
+                url: 'UsuarioServer',
                 data: {
                     accion: $("#usuarioAction").val(),
                     nombreUsuario: $("#inputNombreUsuario").val(),
@@ -118,7 +118,7 @@ function registraUsuario() {
 function consultarUsuarios(numpag) {
     //Se envia la información por ajax
     $.ajax({
-        url: '../UsuarioServlet',
+        url: '../cr/ac/una/prograiv/project/controller/UsuarioServer',
         data: {
             accion: "consultarUsuarios"
         },
@@ -132,7 +132,7 @@ function consultarUsuarios(numpag) {
             //doSearch(data);
             // se oculta el modal esta funcion se encuentra en el utils.js
         },
-        type: 'POST',
+        type: 'GET',
         dataType: "json"
     });
 }
@@ -171,7 +171,7 @@ function dibujarFila(rowData) {
             '</button></td>'));
 }
 
-/*function mostrarMensaje(classCss, msg, neg) {
+function mostrarMensaje(classCss, msg, neg) {
     //se le eliminan los estilos al mensaje
     $("#mensajeAlert").removeClass();
 
@@ -183,7 +183,7 @@ function dibujarFila(rowData) {
     $("#mesajeResultNeg").html(neg);
     $("#mesajeResultText").html(msg);
     $("#mesajeResultText").html(msg);
-}*/
+}
 
 
 function paginador(pagAct, tam) {

@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author grave
  */
-public class UsuarioServlet extends HttpServlet {
+public class UsuarioServer extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -99,9 +99,8 @@ public class UsuarioServlet extends HttpServlet {
                     break;
                 case "buscarNombreUsuario":
                     String nombre = request.getParameter("nombreUsuario");
-                    String pass = request.getParameter("password");
                     System.out.println(nombre);
-                    json = new Gson().toJson(usuBL.findByQuery("FROM Usuario WHERE nombreUsuario=" + "'" + nombre + "'" ));
+                    json = new Gson().toJson(usuBL.findByQuery("FROM Usuario WHERE nombreUsuario=" + "'" + nombre + "'"));
                     out.print(json);
                     break;
                 default:
