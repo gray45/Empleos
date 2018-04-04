@@ -85,18 +85,22 @@ String password   = request.getParameter("password");
 
 
 Usuario usuario = new Usuario();
+Usuario usuaux = new Usuario();
 
 usuario.setUserName(username);
 usuario.setPassword(password);
 
-s.setAttribute("usuario", usuario);
+
 
 
 UsuarioBl usu = new UsuarioBl();
 
 
-if(usu.findByQuery("FROM Usuario WHERE userName=" + "'" + usuario.getUserName() + "'" + "'" + usuario.getPassword() + "'") == usuario){
-    
+  usuaux =(Usuario) usu.findByQuery("FROM Usuario WHERE userName=" + "'" + usuario.getUserName()+ "'" + "AND" + "password=" +"'" + usuario.getPassword() + "'").get(0);
+  s.setAttribute("usuario", usuaux);
+  if((usuaux.getUserName() == usuario.getUserName())&&(usuaux.getPassword() == usuario.getPassword())){
+  
+  
     response.sendRedirect("Menú.jsp");
         
 }else{
@@ -105,6 +109,7 @@ if(usu.findByQuery("FROM Usuario WHERE userName=" + "'" + usuario.getUserName() 
     
     
 }
+ 
 
       }
     
