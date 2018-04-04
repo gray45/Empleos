@@ -99,8 +99,9 @@ public class UsuarioServlet extends HttpServlet {
                     break;
                 case "buscarNombreUsuario":
                     String nombre = request.getParameter("nombreUsuario");
+                    String pass = request.getParameter("password");
                     System.out.println(nombre);
-                    json = new Gson().toJson(usuBL.findByQuery("FROM Usuario WHERE nombreUsuario=" + "'" + nombre + "'"));
+                    json = new Gson().toJson(usuBL.findByQuery("FROM Usuario WHERE userName=" + "'" + nombre + "'" + "'" + pass + "'" ));
                     out.print(json);
                     break;
                 default:
