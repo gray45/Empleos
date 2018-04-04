@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="cr.ac.una.prograiv.project.controller.OferenteServlet"%>
+
 
 <!DOCTYPE html>
 <html>

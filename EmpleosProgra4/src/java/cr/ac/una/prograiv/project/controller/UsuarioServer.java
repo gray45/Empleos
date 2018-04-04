@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author grave
  */
-public class UsuarioServlet extends HttpServlet {
+public class UsuarioServer extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
