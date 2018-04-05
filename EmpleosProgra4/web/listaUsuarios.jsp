@@ -23,18 +23,23 @@
     </head>
     <body>
         <div id="wrapper">
-        <div class="col-lg-12" id="header">
-            <p>This is the Header</p>
+        <div class="col-md-12" id="header1">
+            <%@include file="header.jspf" %>
         </div>
         <div class="col-lg-12">
             <div class="col-md-3" id="leftcolumn">
                 <%@include file="menu.jspf" %>
             </div>
             <div class="col-md-8" id="content">
+                <div class="col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6"><h2 align="center">LISTA DE USUARIOS</h2></div>
+                    <div class="col-md-3"></div>
+                </div>
                 <%
-                List<Usuario> user;
+                List<Usuario> users;
                 UsuarioDao da=new UsuarioDao();
-                user=da.findAll();
+                users=da.findAll();
             %>
             <table class="table table-striped">
                 <tr>
@@ -46,19 +51,19 @@
                     
                 </tr>
                 <%
-                    for(int i=0; i<user.size();i++){
+                    for(int i=0; i<users.size();i++){
                         out.println("<tr>");
                         out.println("<td>");
-                        out.println(user.get(i).getIdUsuario());
+                        out.println(users.get(i).getIdUsuario());
                         out.println("</td>");
                         out.println("<td>");
-                        out.println(user.get(i).getUserName());
+                        out.println(users.get(i).getUserName());
                         out.println("</td>");
                         out.println("<td>");
-                        out.println(user.get(i).getPassword());
+                        out.println(users.get(i).getPassword());
                         out.println("</td>");
                         out.println("<td>");
-                        out.println(user.get(i).getTipo());
+                        out.println(users.get(i).getTipo());
                         out.println("</td>");
                         
                         

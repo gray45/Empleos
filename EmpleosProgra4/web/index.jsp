@@ -21,8 +21,8 @@
 </head>
 <body>
     <div id="wrapper">
-        <div class="col-md-12" id="header">
-            <p>This is the Header</p>
+        <div class="col-md-12" id="header1">
+            <%@include file="header.jspf" %>
         </div>
         <div class="col-md-12">
             <div class="col-md-3" id="leftcolumn">

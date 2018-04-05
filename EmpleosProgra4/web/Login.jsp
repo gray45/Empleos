@@ -17,12 +17,13 @@
 <link rel="stylesheet" type="text/css" href="css/botsnip.css" />
 <link rel="stylesheet" href="css/slidr.css" type="text/css"/>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/header.css"/>
 </head>
 <body>
     <div id="wrapper">
-        <div class="col-md-12" id="header">
-            <p>This is the Header</p>
+        <div class="col-md-12" id="header1">
+            <%@include file="header.jspf" %>
         </div>
         <div class="col-md-12">
             <div class="col-md-3" id="leftcolumn">
@@ -69,7 +70,7 @@
         
     </div>
             
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     

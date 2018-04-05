@@ -16,13 +16,13 @@
 <link rel="stylesheet" type="text/css" href="css/botsnip.css" />
 <link rel="stylesheet" href="css/slidr.css" type="text/css"/>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/style.css"/>
 
     </head>
     <body>
         <div id="wrapper">
-        <div class="col-lg-12" id="header">
-            <p>This is the Header</p>
+        <div class="col-md-12" id="header1">
+            <%@include file="header.jspf" %>
         </div>
         <div class="col-lg-12">
             <div class="col-md-3" id="leftcolumn">
@@ -112,7 +112,7 @@
 							<div class="cols-sm-5">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-check fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="aprobado" id="aprobado"  placeholder="1=Si 2=No"/>
+									<input type="text" class="form-control" name="aprobada" id="aprobada"  placeholder="1=Si 2=No"/>
 								</div>
 							</div>
 						</div>

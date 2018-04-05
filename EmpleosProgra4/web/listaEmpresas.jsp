@@ -23,14 +23,20 @@
     </head>
     <body>
         <div id="wrapper">
-        <div class="col-lg-12" id="header">
-            <p>This is the Header</p>
+        <div class="col-md-12" id="header1">
+            <%@include file="header.jspf" %>
         </div>
         <div class="col-lg-12">
             <div class="col-md-3" id="leftcolumn">
                 <%@include file="menu.jspf" %>
             </div>
             <div class="col-md-8" id="content">
+                
+                <div class="col-md-12">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6"><h2 align="center">LISTA DE EMPRESAS</h2></div>
+                    <div class="col-md-3"></div>
+                </div>
                <% 
                 List<Empresa> empresas;
                 EmpresaDao da=new EmpresaDao();
