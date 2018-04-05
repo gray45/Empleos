@@ -103,6 +103,21 @@ public class UsuarioDao extends HibernateUtil implements IBaseDao<Usuario, Integ
         }
     }
 
+    
+    @Override
+    public List<Usuario> findByQueryLimit(String query, int limit ) {
+        try {
+            List<Usuario> usuarios;
+            iniciarOperacion();
+            usuarios =  getSesion().createQuery(query).setMaxResults(limit).list();
+            return usuarios;
+        } catch (HibernateException he) {
+            manejarException(he);
+            throw he;
+        } finally {
+            getSesion().close();
+        }}
+    
     @Override
     public List findHQLQuery(String query) {
         List lista=null;

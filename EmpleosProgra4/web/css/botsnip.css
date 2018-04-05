@@ -582,7 +582,7 @@ header {
 
 
 
-@mediaonly screen and (max-device-width: 767px) {
+@mediaonly only screen and (max-device-width: 767px) {
     .login-logo img {
         margin: 0 auto;
     }

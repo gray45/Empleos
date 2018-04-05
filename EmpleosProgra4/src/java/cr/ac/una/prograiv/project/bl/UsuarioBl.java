@@ -72,6 +72,13 @@ public class UsuarioBl extends BaseBl implements iBaseBl <Usuario,Integer>{
     }
     
     @Override
+    public List<Usuario> findByQueryLimit(String query, int limit) {
+        UsuarioDao usu = new UsuarioDao();
+        return usu.findByQueryLimit(query, limit);
+        //return this.getDao("domain.Usuario").findByQuery(query);
+    }
+    
+    @Override
     public List findHQLQuery(String query) {
         UsuarioDao usu = new UsuarioDao();
         return usu.findHQLQuery(query);

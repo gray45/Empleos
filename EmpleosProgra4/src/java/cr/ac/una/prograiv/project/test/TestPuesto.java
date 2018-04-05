@@ -6,6 +6,8 @@
 package cr.ac.una.prograiv.project.test;
 
 import cr.ac.una.prograiv.project.Dao.PuestoDao;
+import cr.ac.una.prograiv.project.bl.PuestoBl;
+import cr.ac.una.prograiv.project.domain.Empresa;
 import cr.ac.una.prograiv.project.domain.Puesto;
 import java.util.List;
 
@@ -15,28 +17,38 @@ import java.util.List;
  */
 public class TestPuesto {
     public static void main(String[] args) {
-        //saveUsuario();
+        //savepuesto();
        // mergeUsuario(3);
         //deleteUsuario();
-       findAllUsuario();
+      // findAllUsuario();
         //findIdUsuario(17);
         //findByName("gray");
-        //findquery("1");
+        findquery();
         //findquery("gray","12345");
 
     }
-    public static void findquery(String car ){
-        PuestoDao dao=new PuestoDao();
+    
+    public static void savepuesto(){
+        PuestoBl puestobl = new PuestoBl();
+        for(int i=0; i<6; i++){
+            Empresa empresa = new Empresa();
+            empresa.setIdEmpresa(1);
+        puestobl.save(new Puesto(empresa,"programador", "1200 000", "tele-trabajo", 1));
+        }
+}
+    
+    public static void findquery(){
+        PuestoBl puestoBl =new PuestoBl();
         Puesto puestos;
-        String query="FROM puesto";
+        String query="FROM Puesto pues ORDER BY pues.idPuesto desc";
         //String query="FROM puesto as p, carateristicaspuesto as cp, carateristicas as c\n" +
           //          "WHERE p.idPuesto=c.Puesto_idPuesto\n" +
             //        "and cp.Carateristicas_idCarateristicas=c.idCarateristicas\n" +
               //      "AND c.idCarateristicas= "+car;
-        puestos=(Puesto)dao.findAll();
+        puestos=(Puesto) puestoBl.findByQueryLimit(query, 5).get(0);
        
         
-            System.out.println(puestos.getDescripcion());
+            System.out.println(puestos.getIdPuesto());
         }
         
         public static void findAllUsuario() {

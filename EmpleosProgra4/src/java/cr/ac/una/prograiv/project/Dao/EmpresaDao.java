@@ -102,6 +102,20 @@ public class EmpresaDao extends HibernateUtil implements IBaseDao<Empresa, Integ
             getSesion().close();
         }
     }
+    
+    @Override
+    public List<Empresa> findByQueryLimit(String query, int limit ) {
+        try {
+            List<Empresa> empresas;
+            iniciarOperacion();
+            empresas =  getSesion().createQuery(query).setMaxResults(limit).list();
+            return empresas;
+        } catch (HibernateException he) {
+            manejarException(he);
+            throw he;
+        } finally {
+            getSesion().close();
+        }}
 
     @Override
     public List findHQLQuery(String query) {

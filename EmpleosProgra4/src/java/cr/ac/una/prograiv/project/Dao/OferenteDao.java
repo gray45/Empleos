@@ -102,6 +102,20 @@ public class OferenteDao extends HibernateUtil implements IBaseDao<Oferente, Int
             getSesion().close();
         }
     }
+    
+    @Override
+    public List<Oferente> findByQueryLimit(String query, int limit ) {
+        try {
+            List<Oferente> oferentes;
+            iniciarOperacion();
+            oferentes =  getSesion().createQuery(query).setMaxResults(limit).list();
+            return oferentes;
+        } catch (HibernateException he) {
+            manejarException(he);
+            throw he;
+        } finally {
+            getSesion().close();
+        }}
 
     @Override
     public List findHQLQuery(String query) {

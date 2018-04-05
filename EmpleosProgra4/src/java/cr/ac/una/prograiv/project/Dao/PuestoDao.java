@@ -18,7 +18,17 @@ public class PuestoDao extends HibernateUtil implements IBaseDao<Puesto, Integer
 
     @Override
     public void save(Puesto obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            iniciarOperacion();
+            getSesion().save(obj);
+            getTransac().commit();
+        } catch (HibernateException he) {
+            manejarException(he);
+            throw he;
+        } finally {
+            getSesion().close();
+        }
+
     }
 
     @Override
@@ -41,7 +51,7 @@ public class PuestoDao extends HibernateUtil implements IBaseDao<Puesto, Integer
        try {
             List<Puesto> choferes;
             iniciarOperacion();
-            choferes = (List<Puesto>) getSesion().createQuery("FROM puesto").list();
+            choferes = (List<Puesto>) getSesion().createQuery("FROM Puesto").list();
             return choferes;
         } catch (HibernateException he) {
             manejarException(he);
@@ -56,6 +66,20 @@ public class PuestoDao extends HibernateUtil implements IBaseDao<Puesto, Integer
             List<Puesto> puestos;
             iniciarOperacion();
             puestos =  getSesion().createQuery(query).list();
+            return puestos;
+        } catch (HibernateException he) {
+            manejarException(he);
+            throw he;
+        } finally {
+            getSesion().close();
+        }}
+    
+    @Override
+    public List<Puesto> findByQueryLimit(String query, int limit ) {
+        try {
+            List<Puesto> puestos;
+            iniciarOperacion();
+            puestos =  getSesion().createQuery(query).setMaxResults(limit).list();
             return puestos;
         } catch (HibernateException he) {
             manejarException(he);

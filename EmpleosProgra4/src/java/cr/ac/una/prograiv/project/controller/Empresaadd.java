@@ -51,7 +51,7 @@ public class Empresaadd extends HttpServlet {
             String email=request.getParameter("email");
             String telefono=request.getParameter("telefono");
             String descripcion=request.getParameter("descripcion");
-            String aprobada=request.getParameter("aprobada");
+            String aprobada=request.getParameter("aprobado");
             Empresa em=new Empresa();
             em.setUsuario(user);
             em.setNombre(nombre);

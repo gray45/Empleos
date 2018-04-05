@@ -18,5 +18,6 @@ public interface iBaseBl<T,K>{
     public abstract void delete(T obj);
     public abstract List<T> findAll();
     public abstract List<T> findByQuery(String query);
+    public abstract List<T> findByQueryLimit(String query, int limit);
     public abstract List findHQLQuery(String query);
 }
