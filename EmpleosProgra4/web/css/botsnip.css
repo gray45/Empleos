@@ -202,10 +202,12 @@ li,ul{
 }
 
 #navigation {
+    
     background: #0e1a35;
 }
 
 #navigation {
+    position: fixed;
     padding: 0;
 }
 
@@ -381,6 +383,7 @@ header {
 }
 
 .navi i {
+    
     margin-right: 15px;
     color: #5584ff;
 }

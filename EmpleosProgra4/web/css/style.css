@@ -8,17 +8,23 @@ and open the template in the editor.
     Author     : demc0
 */
 
+
+.container{
+    width: 800px;
+}
+
 #playground-container {
-    height: 400px;
+    
+    height: 300px;
     overflow: hidden !important;
     -webkit-overflow-scrolling: touch;
 }
 body, html{
-     height: 20%;
+     height: 50%;
  	background-repeat: no-repeat;
  	background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
  	font-family: 'Oxygen', sans-serif;
-	    background-size: 100%;
+	    background-size: 200%;
 }
 
 .main{
