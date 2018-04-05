@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Ismael
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
+@WebServlet(name = "Login", urlPatterns = {"/Login", "/Logout"})
 public class Login extends HttpServlet {
    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -1,4 +1,5 @@
 <%-- any content can be specified here e.g.: --%>
+<%@page import="cr.ac.una.prograiv.project.bl.PuestoBl"%>
 <%@page import="cr.ac.una.prograiv.project.Dao.PuestoDao"%>
 <%@page import="java.util.List"%>
 <%@page import="cr.ac.una.prograiv.project.domain.Puesto"%>
@@ -7,12 +8,13 @@
 <div class="slider">
     <ul>
     <%/*
+        PuestoDao puestoBl =new PuestoDao();
         List<Puesto> puestos;
-        PuestoDao daopu=new PuestoDao();
-        puestos=daopu.findAll();
-        
+        //String query="FROM Puesto pues ORDER BY pues.idPuesto desc";
+        puestos=puestoBl.findAll();//(List<Puesto>) puestoBl.findByQueryLimit(query, 5);
        
-        for(int i=0;i<puestos.size();i++){
+       
+        for(int i=0;i<5;i++){
         out.println("<li>");
          out.println("<table class='table table-striped'>");
          out.println("<th scope='col'>Id Puesto<th>");

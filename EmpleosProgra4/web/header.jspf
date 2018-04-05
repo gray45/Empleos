@@ -16,7 +16,7 @@
         Usuario user= (Usuario) session.getAttribute("usuario");
         if (user!=null){%>
               <li><a href="index.jsp"><button type="button" class="btn btn-success"><%=user.getUserName()%></button></a>
-                <ul  > <li> <a href="#"><button type="button" class="btn btn-warning">Logout</button></a></li> </ul>
+                <ul  > <li> <a href="Logout"><button type="button" class="btn btn-warning">Logout</button></a></li> </ul>
               </li>
             <% }%>
 
