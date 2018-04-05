@@ -24,7 +24,7 @@
         <div class="col-md-12" id="header1">
             <%@include file="header.jspf" %>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 divprin">
             <div class="col-md-3" id="leftcolumn">
                 <%@include file="menu.jspf" %>
             </div>
@@ -35,6 +35,12 @@
         </div>
         
     </div>
+            
+            <script type="text/javascript">
+               
+                dom="Daniel Mora        114730950 \n\Greivin Rojas      402110275 \n\Ismael Salazar     402120199";
+                alert(dom);
+            </script>
 </body>
 </html>
 

@@ -24,7 +24,7 @@
         <div class="col-md-12" id="header1">
             <%@include file="header.jspf" %>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 divprin">
             <div class="col-md-3" id="leftcolumn">
                 <%@include file="menu.jspf" %>
             </div>
@@ -131,50 +131,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-                
-                
-                
-                <!--<form method="post" action="Empresaadd">
-                <table>
-                    <tr>
-                        <td>Usuario</td>   
-                        <td><input type="text" name="usuario"/></td>
-                    </tr>
-                    <tr>
-                        <td>Nombre</td>   
-                        <td><input type="text" name="nombre"/></td>
-                    </tr>
-                    <tr>
-                        <td>Latitud</td>   
-                        <td><input type="text" name="lactitud"/></td>
-                    </tr>
-                    <tr>
-                        <td>Longitud</td>   
-                        <td><input type="text" name="longitud"/></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>   
-                        <td><input type="text" name="email"/></td>
-                    </tr>
-                    <tr>
-                        <td>Telefono</td>   
-                        <td><input type="text" name="telefono"/></td>
-                    </tr>
-                    <tr>
-                        <td>Descripcion</td>   
-                        <td><input type="text" name="descripcion"/></td>
-                    </tr>
-                    <tr>
-                        <td>Aprobada</td>   
-                        <td><input type="text" name="aprobada"/></td>
-                    </tr>
-            
-                    <tr colspan="2">
-                        <td><input type="submit" value="Guardar" /></td>
-                    </tr>
-                </table>
-              
-             </form>-->
+ 
             </div>
             
         </div>

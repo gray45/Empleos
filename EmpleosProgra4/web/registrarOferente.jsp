@@ -28,7 +28,7 @@
         <div class="col-md-12" id="header1">
             <%@include file="header.jspf" %>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 divprin">
             <div class="col-md-3" id="leftcolumn">
                 <%@include file="menu.jspf" %>
             </div>
