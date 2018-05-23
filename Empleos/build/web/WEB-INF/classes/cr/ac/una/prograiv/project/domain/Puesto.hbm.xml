@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/03/2018 02:50:21 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.ac.una.prograiv.project.domain.Puesto" table="puesto" catalog="empleos" optimistic-lock="version">
+        <id name="idPuesto" type="java.lang.Integer">
+            <column name="idPuesto" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empresa" class="cr.ac.una.prograiv.project.domain.Empresa" fetch="select">
+            <column name="Empresa_idEmpresa" not-null="true" />
+        </many-to-one>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="45" not-null="true" />
+        </property>
+        <property name="sueldo" type="string">
+            <column name="sueldo" length="45" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="45" not-null="true" />
+        </property>
+        <property name="disponible" type="int">
+            <column name="disponible" not-null="true" />
+        </property>
+        <set name="puestooferentes" table="puestooferente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Puesto_idPuesto" not-null="true" />
+            </key>
+            <one-to-many class="cr.ac.una.prograiv.project.domain.Puestooferente" />
+        </set>
+        <set name="carateristicaspuestos" table="carateristicaspuesto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Puesto_idPuesto" not-null="true" />
+            </key>
+            <one-to-many class="cr.ac.una.prograiv.project.domain.Carateristicaspuesto" />
+        </set>
+    </class>
+</hibernate-mapping>

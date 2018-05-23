@@ -1,0 +1,109 @@
+<%-- any content can be specified here e.g.: --%>
+<<<<<<< HEAD
+<%@page import="java.util.ArrayList"%>
+=======
+<%@page import="cr.ac.una.prograiv.project.bl.PuestoBl"%>
+<%@page import="cr.ac.una.prograiv.project.Dao.PuestoDao"%>
+>>>>>>> 7c396fb7fc3ab225284ea52b57cff4454bb43bb7
+<%@page import="java.util.List"%>
+<%@page import="cr.ac.una.prograiv.project.domain.Puesto"%>
+<%@ page pageEncoding="UTF-8" %>
+
+<div class="slider">
+    <ul>
+<<<<<<< HEAD
+        <%
+
+            if (request.getAttribute("puestos") != null) {
+                List<Puesto> puestos = (List<Puesto>) request.getAttribute("puestos");
+                for (Puesto puesto : puestos) {%>
+=======
+    <%/*
+        PuestoDao puestoBl =new PuestoDao();
+        List<Puesto> puestos;
+        //String query="FROM Puesto pues ORDER BY pues.idPuesto desc";
+        puestos=puestoBl.findAll();//(List<Puesto>) puestoBl.findByQueryLimit(query, 5);
+       
+       
+        for(int i=0;i<5;i++){
+        out.println("<li>");
+         out.println("<table class='table table-striped'>");
+         out.println("<th scope='col'>Id Puesto<th>");
+         out.println("<th scope='col'>Id Descripcion<th>");
+         out.println("<th scope='col'>Id Sueldo<th>");
+         out.println("<th scope='col'>Id Empresa<th>");
+         out.println("<th scope='col'>Id Tipo<th>");
+        
+            out.println("<tr>");
+            
+            out.println("<td>");
+            out.println(puestos.get(i).getIdPuesto());
+            out.println("</td>");
+            
+            out.println("<td>");
+            out.println(puestos.get(i).getDescripcion());
+            out.println("</td>");
+            
+            out.println("<td>");
+            out.println(puestos.get(i).getSueldo());
+            out.println("</td>");
+            
+            out.println("<td>");
+            out.println(puestos.get(i).getEmpresa().getNombre());
+            out.println("</td>");
+            
+            out.println("<td>");
+            out.println(puestos.get(i).getTipo());
+            out.println("</td>");
+            
+            out.println("</tr>");
+        }
+        out.println("<table>");
+        
+        */
+    %>
+    
+        
+        <li>
+            <img src="http://dominicushoeve.com/wp-content/uploads/ktz/latest-high-resolution-wallpaper-1920x1080-70558-pictures-high-resolution-wallpaper-30whtvl34j4r12m8b0c1sa.jpg" alt="">
+        </li>
+        <li>
+            <img src="http://youghaltennisclub.ie/wp-content/uploads/2014/06/Tennis-Wallpaper-High-Definition-700x300.jpg" alt="">
+        </li>
+        <li>
+            <img src="http://welltechnically.com/wp-content/uploads/2013/08/android-wallpapers-700x300.jpg" alt="">
+        </li>
+>>>>>>> 7c396fb7fc3ab225284ea52b57cff4454bb43bb7
+        <li>
+            <div class="container-fluid" >
+                <table class="table-condensed bg-light">
+                    
+                    <tr>
+                        <td><h3>Id Puesto </h3></td>
+                        <td>
+                            <h3><%= puesto.getIdPuesto()%></h3>
+                        </td>
+                        <td><h3>Descripcíon </h3></td>
+                        <td>
+                            <h3><%= puesto.getDescripcion()%></h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h3>Sueldo </h3></td>
+                        <td>
+                            <h3> <%= puesto.getSueldo()%></h3>
+                        </td>
+                        <td><h3>Tipo </h3></td>
+                        <td>
+                            <h3><%= puesto.getTipo()%></h3>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </li>
+        <% }
+            }
+        %>
+
+    </ul>
+</div>

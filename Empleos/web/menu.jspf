@@ -1,0 +1,20 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+            <div class="hidden-xs display-table-cell v-align box" id="navigation">
+                
+                <div class="navi">
+                    <ul>
+                        <li><a href="Slider"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li><a href="registrarUsuario.jsp"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Agregar Usuairios</span></a></li>
+                        <li><a href="listaOferentes.jsp"><i class="fa fa-list-alt " aria-hidden="true"></i><span class="hidden-xs hidden-sm">Lista de Oferentes</span></a></li>
+                        <li><a href="listaEmpresas.jsp"><i class="fa fa-list-alt " aria-hidden="true"></i><span class="hidden-xs hidden-sm">Listar Empresas</span></a></li>
+                        <li><a href="listaUsuarios.jsp"><i class="fa fa-list-alt" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Lista de Usuarios</span></a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+
+

@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04/04/2018, 08:23:44 PM
+    Author     : demc0
+*/
+
+#header1{
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color:  #000;
+    z-index: 100;
+}
+
+#logo{
+   
+    height: 80px;
+}
+
+#botonini{
+    position: relative;
+    top: 20px;
+}
+
+.divprin{
+    position: relative;
+    top:80px;
+}

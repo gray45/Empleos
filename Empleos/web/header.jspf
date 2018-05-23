@@ -1,0 +1,31 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="cr.ac.una.prograiv.project.domain.Usuario"%>
+<%@ page pageEncoding="UTF-8" %>
+<link rel="stylesheet" href="css/header.css" type="text/css"/>
+<div>
+    <div class="col-md-7"></div>
+    <div class="col-md-3">
+        <img id="logo" src="img/logo2.png" alt="">
+    </div>
+    <div class="col-md-2">
+        
+        
+        
+        
+        <%
+        Usuario user= (Usuario) session.getAttribute("usuario");
+        if (user!=null){%>
+              <li><a href="index.jsp"><button type="button" class="btn btn-success"><%=user.getUserName()%></button></a>
+                <ul  > <li> <a href="Logout"><button type="button" class="btn btn-warning">Logout</button></a></li> </ul>
+              </li>
+            <% }%>
+
+            <% if (user==null){%>
+            
+            <li id="botonini"><a href="registrarUsuario.jsp"><button type="button" class="btn btn-warning">Iniciar-Seccion</button></a></li>
+            <li id="botonini" ><a href="login.jsp"><button type="button" class="btn btn-success" >Registrarse</button></a></li>
+              
+            <% }
+        %>  
+    </div>
+</div>

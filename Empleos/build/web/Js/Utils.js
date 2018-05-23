@@ -1,0 +1,64 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/*
+ 
+ <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="myModalTitle">Modal Header</h4>
+            </div>
+            <div class="modal-body" id="myModalMessage">
+                <p>This is a small modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+ */
+$(document).ready(function () {
+    $("#mesajeLogin").removeClass();
+    $("#mesajeLogin").hide();
+    $("#mesajeResult").removeClass();
+    $("#mesajeResult").hide();
+    $('#sesionCont').hide();
+    $('[title="Sesion"]').popover({
+        html: true,
+        content: $('#sesionCont')
+    }).click(function() {
+        $('#sesionCont').show();
+        $(this).popover('show');
+    });
+});
+
+ function mostrarModal(idDiv ,titulo, mensaje){
+     $("#"+idDiv+"Title").html(titulo);
+     $("#"+idDiv+"Message").html(mensaje);
+     $("#"+idDiv).modal();
+ }
+ 
+ function mostrarModalAsignacion(idDiv){
+     $("#"+idDiv).modal();
+ }
+ 
+ function ocultarModal(idDiv){
+     $("#"+idDiv).modal("hide");	
+ }
+ 
+  function cambiarMensajeModal(idDiv ,titulo, mensaje){
+     $("#"+idDiv+"Title").html(titulo);
+     $("#"+idDiv+"Message").html(mensaje);
+ }
+
+/***********************************************************************************/
+/***********************************************************************************/
+/* Fin de las opcines de mensaje MODAL
+/***********************************************************************************/
+/***********************************************************************************/
