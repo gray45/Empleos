@@ -1,18 +1,70 @@
 <%-- any content can be specified here e.g.: --%>
+<%@page import="cr.ac.una.prograiv.project.domain.Usuario"%>
 <%@ page pageEncoding="UTF-8" %>
 
+            <%
+                
+                Usuario u= (Usuario) session.getAttribute("usuario");
+                
+            %>
             <div class="hidden-xs display-table-cell v-align box" id="navigation">
                 
                 <div class="navi">
                     <ul>
+                        
                         <li><a href="Slider"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                        <li><a href="registrarUsuario.jsp"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Agregar Usuairios</span></a></li>
+                       
+                        <% if(u!=null){
+                            int i= Integer.parseInt(u.getTipo());
+                        %>
+                        <%
+                            if(i==1){
+                        /*
+                            Generar Reporte
+                            Ver Lista de empresas nuevas
+                            ver lista de oferentes nuevos
+                            Registrar Caracteristicas
+                        
+                        */%>
                         <li><a href="listaOferentes.jsp"><i class="fa fa-list-alt " aria-hidden="true"></i><span class="hidden-xs hidden-sm">Lista de Oferentes</span></a></li>
                         <li><a href="listaEmpresas.jsp"><i class="fa fa-list-alt " aria-hidden="true"></i><span class="hidden-xs hidden-sm">Listar Empresas</span></a></li>
                         <li><a href="listaUsuarios.jsp"><i class="fa fa-list-alt" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Lista de Usuarios</span></a></li>
+
+                        <%
+                            }
+                        %>
+                        <% if(i==2){
+                        /*
+                            Publicar Puestos
+                            Buscar Candidatos por caracteristicas
+                            ver puestos activos y deshabilitarlos
+                            Ver oferentes
+                        */
+                            
+                        %>
+                           <li><a href="registrarPuesto.jsp"><i class="fa fa-list-alt " aria-hidden="true"></i><span class="hidden-xs hidden-sm">Agregar nuevo Puesto</span></a></li>
+                           
+
+                        <%
+                            }
+                        %>
                         
+                        
+                        <% if(i==3){
+                        /*
+                           Registrar lista de caracteristicas
+                           Subir pdf
+                           Ver lista de puestos publicos                        
+                        */
+                        }
+                        %>
+                        
+                        
+                        <% } %>
+
                     </ul>
                 </div>
+                        
             </div>
 
 

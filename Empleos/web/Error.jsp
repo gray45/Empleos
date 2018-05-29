@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@ include file="Header.jsp" %>
+        <%@ include file="header.jspf" %>
     
   <div id="body" style="margin: 0 auto; width:85%; ">    
     <jsp:useBean id="error" scope="request" type="java.lang.String" class="java.lang.String" />
