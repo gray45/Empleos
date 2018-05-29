@@ -39,31 +39,18 @@ public class TestPuesto {
     
     public static void findquery(){
         PuestoBl puestoBl =new PuestoBl();
-<<<<<<< HEAD
          List<Puesto> puestos;
-=======
-        List<Puesto> puestos;
->>>>>>> 7c396fb7fc3ab225284ea52b57cff4454bb43bb7
         String query="FROM Puesto pues ORDER BY pues.idPuesto desc";
         //String query="FROM puesto as p, carateristicaspuesto as cp, carateristicas as c\n" +
           //          "WHERE p.idPuesto=c.Puesto_idPuesto\n" +
             //        "and cp.Carateristicas_idCarateristicas=c.idCarateristicas\n" +
               //      "AND c.idCarateristicas= "+car;
-<<<<<<< HEAD
         puestos= puestoBl.findByQueryLimit(query, 5);
        
         
              puestos.forEach((aux) -> {
             System.out.println(aux.getDescripcion());
         });
-=======
-        puestos=(List<Puesto>) puestoBl.findByQueryLimit(query, 5);
-       
-        
-            System.out.println(puestos.get(1).getIdPuesto());
-            System.out.println(puestos.get(2).getIdPuesto());
-            System.out.println(puestos.get(3).getIdPuesto());
->>>>>>> 7c396fb7fc3ab225284ea52b57cff4454bb43bb7
         }
         
         public static void findAllUsuario() {
