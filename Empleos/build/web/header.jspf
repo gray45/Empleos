@@ -22,8 +22,8 @@
 
             <% if (user==null){%>
             
-            <li id="botonini"><a href="registrarUsuario.jsp"><button type="button" class="btn btn-warning">Iniciar-Seccion</button></a></li>
-            <li id="botonini" ><a href="login.jsp"><button type="button" class="btn btn-success" >Registrarse</button></a></li>
+            <li id="botonini"><a href="Login.jsp"><button type="button" class="btn btn-warning">Iniciar-Seccion</button></a></li>
+            <li id="botonini" ><a href="registrarUsuario.jsp"><button type="button" class="btn btn-success" >Registrarse</button></a></li>
               
             <% }
         %>  

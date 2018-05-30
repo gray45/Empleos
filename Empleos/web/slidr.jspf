@@ -5,43 +5,49 @@
 <%@page import="cr.ac.una.prograiv.project.domain.Puesto"%>
 <%@ page pageEncoding="UTF-8" %>
 
-<div class="slider">
-    <ul>
-        <%
+
+        
+
+    <div class="w3-content w3-section" style="max-width:500px">
+            <%
 
             if (request.getAttribute("puestos") != null) {
                 List<Puesto> puestos = (List<Puesto>) request.getAttribute("puestos");
-                for (Puesto puesto : puestos) {%>
-        <li>
-            <div class="container-fluid" >
-                <table class="table-condensed bg-light">
+                
+                for(int i=0;i<puestos.size();i++){
+                 %>
+                 <div class="mySlides" style="width: 100%">
+                     <h3 align="center">Puestos Publicos</h3>
+                     <div> <h3><b>ID:</b>              <%out.println(puestos.get(i).getIdPuesto());%></h3></div>
+                     <div> <h3><b>Descripcion:</b> <%out.println(puestos.get(i).getDescripcion());%></h3> </div>
+                     <div> <h3><b>Sueldo:</b> <%out.println(puestos.get(i).getSueldo());%></h3></div>
+                     <div> <h3><b>Tipo:</b>         <%out.println(puestos.get(i).getTipo());%></h3> </div>
+                     
+                 </div>
+        <%   
                     
-                    <tr>
-                        <td><h3>Id Puesto </h3></td>
-                        <td>
-                            <h3><%= puesto.getIdPuesto()%></h3>
-                        </td>
-                        <td><h3>Descripcíon </h3></td>
-                        <td>
-                            <h3><%= puesto.getDescripcion()%></h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><h3>Sueldo </h3></td>
-                        <td>
-                            <h3> <%= puesto.getSueldo()%></h3>
-                        </td>
-                        <td><h3>Tipo </h3></td>
-                        <td>
-                            <h3><%= puesto.getTipo()%></h3>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </li>
-        <% }
-            }
+                }
         %>
+            
+        <% }
+            
+        %>
+    </div>
 
-    </ul>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
 </div>

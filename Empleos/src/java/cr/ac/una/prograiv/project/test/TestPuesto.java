@@ -40,7 +40,7 @@ public class TestPuesto {
     public static void findquery(){
         PuestoBl puestoBl =new PuestoBl();
          List<Puesto> puestos;
-        String query="FROM Puesto pues ORDER BY pues.idPuesto desc";
+        String query="FROM Puesto where Empresa_idEmpresa='2'";
         //String query="FROM puesto as p, carateristicaspuesto as cp, carateristicas as c\n" +
           //          "WHERE p.idPuesto=c.Puesto_idPuesto\n" +
             //        "and cp.Carateristicas_idCarateristicas=c.idCarateristicas\n" +
