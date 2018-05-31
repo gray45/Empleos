@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : demc0
 */
 
+#Mapa_de_usuario {
+        height: 100%;
+		width: 40%;
+      }
 
 .container{
     width: 800px;

@@ -7,6 +7,7 @@ import cr.ac.una.prograiv.project.Dao.EmpresaDao;
 import cr.ac.una.prograiv.project.domain.Empresa;
 import java.util.List;
 import cr.ac.una.prograiv.project.domain.Usuario;
+import cr.ac.una.prograiv.project.domain.Usuario;
 
 public final class listaEmpresas_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -62,12 +63,11 @@ public final class listaEmpresas_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">\n");
-      out.write("<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>\n");
-      out.write("<script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>\n");
-      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/botsnip.css\" />\n");
-      out.write("<link rel=\"stylesheet\" href=\"css/slidr.css\" type=\"text/css\"/>\n");
-      out.write("<link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css\" rel=\"stylesheet\" integrity=\"sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1\" crossorigin=\"anonymous\">\n");
-      out.write("\n");
+      out.write("        <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>\n");
+      out.write("        <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/botsnip.css\" />\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/slidr.css\" type=\"text/css\"/>\n");
+      out.write("        <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css\" rel=\"stylesheet\" integrity=\"sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1\" crossorigin=\"anonymous\">\n");
       out.write("        <title>Lista de Empresas</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
@@ -96,7 +96,7 @@ public final class listaEmpresas_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("              <li><a href=\"index.jsp\"><button type=\"button\" class=\"btn btn-success\">");
       out.print(user.getUserName());
       out.write("</button></a>\n");
-      out.write("                <ul  > <li> <a href=\"#\"><button type=\"button\" class=\"btn btn-warning\">Logout</button></a></li> </ul>\n");
+      out.write("                <ul  > <li> <a href=\"Logout\"><button type=\"button\" class=\"btn btn-warning\">Logout</button></a></li> </ul>\n");
       out.write("              </li>\n");
       out.write("            ");
  }
@@ -106,7 +106,8 @@ public final class listaEmpresas_jsp extends org.apache.jasper.runtime.HttpJspBa
  if (user==null){
       out.write("\n");
       out.write("            \n");
-      out.write("            <li id=\"botonini\"><a href=\"Login.jsp\"><button type=\"button\" class=\"btn btn-danger\">Iniciar-Sesión</button></a></li>\n");
+      out.write("            <li id=\"botonini\"><a href=\"Login.jsp\"><button type=\"button\" class=\"btn btn-warning\">Iniciar-Seccion</button></a></li>\n");
+      out.write("            <li id=\"botonini\" ><a href=\"registrarUsuario.jsp\"><button type=\"button\" class=\"btn btn-success\" >Registrarse</button></a></li>\n");
       out.write("              \n");
       out.write("            ");
  }
@@ -122,20 +123,93 @@ public final class listaEmpresas_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("            ");
+
+                
+                Usuario u= (Usuario) session.getAttribute("usuario");
+                
+            
+      out.write("\n");
       out.write("            <div class=\"hidden-xs display-table-cell v-align box\" id=\"navigation\">\n");
       out.write("                \n");
       out.write("                <div class=\"navi\">\n");
       out.write("                    <ul>\n");
-      out.write("                        <li><a href=\"Login.jsp\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">LOGIN</span></a></li>\n");
-      out.write("                        <li><a href=\"registrarOferente.jsp\"><i class=\"fa fa-user-secret\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Agregar Oferentes</span></a></li>\n");
-      out.write("                        <li><a href=\"listaOferentes.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Oferentes</span></a></li>\n");
-      out.write("                        <li><a href=\"registrarEmpresa.jsp\"><i class=\"fa fa-building \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Agregar Empresa</span></a></li>\n");
-      out.write("                        <li><a href=\"listaEmpresas.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Listar Empresas</span></a></li>\n");
-      out.write("                        <li><a href=\"registrarUsuario.jsp\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Agregar Usuairios</span></a></li>\n");
-      out.write("                        <li><a href=\"listaUsuarios.jsp\"><i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Usuarios</span></a></li>\n");
       out.write("                        \n");
+      out.write("                       \n");
+      out.write("                        ");
+ if(u!=null){
+                            int i= Integer.parseInt(u.getTipo());
+                        
+      out.write("\n");
+      out.write("                        ");
+
+                            if(i==1){
+                        /*
+                            Generar Reporte
+                            Ver Lista de empresas nuevas
+                            ver lista de oferentes nuevos
+                            Registrar Caracteristicas
+                        
+                        */
+      out.write("\n");
+      out.write("                        \n");
+      out.write("                        <li><a href=\"Slider\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Home</span></a></li>\n");
+      out.write("                        <li><a href=\"listaOferentes.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Oferentes</span></a></li>\n");
+      out.write("                        <li><a href=\"listaEmpresas.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Listar Empresas</span></a></li>\n");
+      out.write("                        <li><a href=\"listaUsuarios.jsp\"><i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Usuarios</span></a></li>\n");
+      out.write("\n");
+      out.write("                        ");
+
+                            }
+                        
+      out.write("\n");
+      out.write("                        ");
+ if(i==2){
+                        /*
+                            Publicar Puestos
+                            Buscar Candidatos por caracteristicas
+                            ver puestos activos y deshabilitarlos
+                            Ver oferentes
+                        */
+                            
+                        
+      out.write("\n");
+      out.write("                        \n");
+      out.write("                           <li><a href=\"Slider\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Home</span></a></li>\n");
+      out.write("                           <li><a href=\"registrarPuesto.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Agregar nuevo Puesto</span></a></li>\n");
+      out.write("                           <li><a href=\"listaPuestos.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Puestos</span></a></li>\n");
+      out.write("                           \n");
+      out.write("                           \n");
+      out.write("                           \n");
+      out.write("\n");
+      out.write("                        ");
+
+                            }
+                        
+      out.write("\n");
+      out.write("                        \n");
+      out.write("                        \n");
+      out.write("                        ");
+ if(i==3){
+                        /*
+                           Registrar lista de caracteristicas
+                           Subir pdf
+                           Ver lista de puestos publicos                        
+                        */
+                        }
+                        
+      out.write("\n");
+      out.write("                        \n");
+      out.write("                        <li><a href=\"Slider\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Home</span></a></li>\n");
+      out.write("                        \n");
+      out.write("                        ");
+ } 
+      out.write("\n");
+      out.write("\n");
       out.write("                    </ul>\n");
       out.write("                </div>\n");
+      out.write("                        \n");
       out.write("            </div>\n");
       out.write("\n");
       out.write("\n");

@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import cr.ac.una.prograiv.project.domain.Usuario;
+import cr.ac.una.prograiv.project.domain.Usuario;
 
 public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -58,6 +59,9 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("        <title>JSP Page</title>\n");
       out.write("        <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">\n");
       out.write("        <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>\n");
+      out.write("         <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBe7lRExeChAWuRiEpRkE-l8aldatSkkAw&libraries=places\"></script>\n");
+      out.write("         <script src=\"Js/Mapa_de_usuario.js\" type=\"text/javascript\"></script>\n");
+      out.write("         <script src=\"Js/Geolocalizacion.js\" type=\"text/javascript\"></script>\n");
       out.write("        <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>\n");
       out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/botsnip.css\" />\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/slidr.css\" type=\"text/css\"/>\n");
@@ -102,8 +106,8 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
  if (user==null){
       out.write("\n");
       out.write("            \n");
-      out.write("            <li id=\"botonini\"><a href=\"registrarUsuario.jsp\"><button type=\"button\" class=\"btn btn-warning\">Iniciar-Seccion</button></a></li>\n");
-      out.write("            <li id=\"botonini\" ><a href=\"Login.jsp\"><button type=\"button\" class=\"btn btn-success\" >Registrarse</button></a></li>\n");
+      out.write("            <li id=\"botonini\"><a href=\"Login.jsp\"><button type=\"button\" class=\"btn btn-warning\">Iniciar-Seccion</button></a></li>\n");
+      out.write("            <li id=\"botonini\" ><a href=\"registrarUsuario.jsp\"><button type=\"button\" class=\"btn btn-success\" >Registrarse</button></a></li>\n");
       out.write("              \n");
       out.write("            ");
  }
@@ -119,20 +123,93 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("            ");
+
+                
+                Usuario u= (Usuario) session.getAttribute("usuario");
+                
+            
+      out.write("\n");
       out.write("            <div class=\"hidden-xs display-table-cell v-align box\" id=\"navigation\">\n");
       out.write("                \n");
       out.write("                <div class=\"navi\">\n");
       out.write("                    <ul>\n");
-      out.write("                        <li><a href=\"Slider\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Home</span></a></li>\n");
-      out.write("                        <li><a href=\"registrarOferente.jsp\"><i class=\"fa fa-user-secret\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Agregar Oferentes</span></a></li>\n");
-      out.write("                        <li><a href=\"listaOferentes.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Oferentes</span></a></li>\n");
-      out.write("                        <li><a href=\"registrarEmpresa.jsp\"><i class=\"fa fa-building \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Agregar Empresa</span></a></li>\n");
-      out.write("                        <li><a href=\"listaEmpresas.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Listar Empresas</span></a></li>\n");
-      out.write("                        <li><a href=\"registrarUsuario.jsp\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Agregar Usuairios</span></a></li>\n");
-      out.write("                        <li><a href=\"listaUsuarios.jsp\"><i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Usuarios</span></a></li>\n");
       out.write("                        \n");
+      out.write("                       \n");
+      out.write("                        ");
+ if(u!=null){
+                            int i= Integer.parseInt(u.getTipo());
+                        
+      out.write("\n");
+      out.write("                        ");
+
+                            if(i==1){
+                        /*
+                            Generar Reporte
+                            Ver Lista de empresas nuevas
+                            ver lista de oferentes nuevos
+                            Registrar Caracteristicas
+                        
+                        */
+      out.write("\n");
+      out.write("                        \n");
+      out.write("                        <li><a href=\"Slider\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Home</span></a></li>\n");
+      out.write("                        <li><a href=\"listaOferentes.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Oferentes</span></a></li>\n");
+      out.write("                        <li><a href=\"listaEmpresas.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Listar Empresas</span></a></li>\n");
+      out.write("                        <li><a href=\"listaUsuarios.jsp\"><i class=\"fa fa-list-alt\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Usuarios</span></a></li>\n");
+      out.write("\n");
+      out.write("                        ");
+
+                            }
+                        
+      out.write("\n");
+      out.write("                        ");
+ if(i==2){
+                        /*
+                            Publicar Puestos
+                            Buscar Candidatos por caracteristicas
+                            ver puestos activos y deshabilitarlos
+                            Ver oferentes
+                        */
+                            
+                        
+      out.write("\n");
+      out.write("                        \n");
+      out.write("                           <li><a href=\"Slider\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Home</span></a></li>\n");
+      out.write("                           <li><a href=\"registrarPuesto.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Agregar nuevo Puesto</span></a></li>\n");
+      out.write("                           <li><a href=\"listaPuestos.jsp\"><i class=\"fa fa-list-alt \" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Lista de Puestos</span></a></li>\n");
+      out.write("                           \n");
+      out.write("                           \n");
+      out.write("                           \n");
+      out.write("\n");
+      out.write("                        ");
+
+                            }
+                        
+      out.write("\n");
+      out.write("                        \n");
+      out.write("                        \n");
+      out.write("                        ");
+ if(i==3){
+                        /*
+                           Registrar lista de caracteristicas
+                           Subir pdf
+                           Ver lista de puestos publicos                        
+                        */
+                        }
+                        
+      out.write("\n");
+      out.write("                        \n");
+      out.write("                        <li><a href=\"Slider\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Home</span></a></li>\n");
+      out.write("                        \n");
+      out.write("                        ");
+ } 
+      out.write("\n");
+      out.write("\n");
       out.write("                    </ul>\n");
       out.write("                </div>\n");
+      out.write("                        \n");
       out.write("            </div>\n");
       out.write("\n");
       out.write("\n");
@@ -281,6 +358,17 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                            </div>\n");
       out.write("                                        </div>\n");
       out.write("                                    </div>\n");
+      out.write("                                    <div class=\"form-group\" style=\"display: none\" id=\"divDireccion\">\n");
+      out.write("                                        <label for=\"inputDireccion\">Dirección*</label>    \n");
+      out.write("                                        <div class=\"input-group\">                                               \n");
+      out.write("                                            <input type=\"text\" class=\"form-control\" id=\"inputDireccion\" autofocus=\"autofocus\" placeholder=\"Presione el botón → \" size=\"100%\" \n");
+      out.write("                                                   >\n");
+      out.write("                                            <span id=\"Obtener_ubicacion\" class=\" input-group-addon\">\n");
+      out.write("                                                <span class=\"active glyphicon glyphicon-screenshot\" onclick=\"Obtener_ubicacion( )\"></span>\n");
+      out.write("                                            </span>\n");
+      out.write("                                        </div>\n");
+      out.write("                                    </div>\n");
+      out.write("                                   \n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -299,48 +387,12 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                    <!-- Include all compiled plugins (below), or include individual files as needed -->\n");
       out.write("                    <script src=\"js/bootstrap.min.js\"></script>\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("                    <!--\n");
-      out.write("                    \n");
-      out.write("                    <form method=\"post\" action=\"Usuarioadd\">\n");
-      out.write("                <table>\n");
-      out.write("                <tr>\n");
-      out.write("                      <td>Username</td>   \n");
-      out.write("                      <td><input type=\"text\" name=\"username\"/></td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                      <td>Password</td>   \n");
-      out.write("                      <td><input type=\"text\" name=\"password\"/></td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                      <td>Tipo</td>   \n");
-      out.write("                      <td><input type=\"text\" name=\"tipo\"/></td>\n");
-      out.write("                </tr>\n");
-      out.write("                \n");
-      out.write("                <tr colspan=\"2\">\n");
-      out.write("                    <td><input type=\"submit\" value=\"Guardar\" /></td>\n");
-      out.write("                </tr>\n");
-      out.write("               \n");
-      out.write("                \n");
-      out.write("                </table>\n");
-      out.write("                \n");
-      out.write("            </form>-->\n");
       out.write("                </div>\n");
       out.write("\n");
       out.write("            </div>\n");
       out.write("\n");
       out.write("        </div>\n");
+      out.write("                <div id=\"Mapa_de_usuario\"></div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

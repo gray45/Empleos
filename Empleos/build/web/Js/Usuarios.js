@@ -132,20 +132,22 @@ function ocultarCampos() {
     $("#divNacionalidad").hide();
     $("#divTelefono").hide();
     $("#divEmail").hide();
-    $("#divLactitud").hide();
-    $("#divlongitud").hide();
+    //$("#divLactitud").hide();
+    //$("#divlongitud").hide();
     $("#divAprobado").hide();
     $("#divDescripcion").hide();
+    $("#divDireccion").hide();
 }
 
 function mostrarCamposEmpresa() {
     $("#divNombre").show();
-    $("#divLactitud").show();
-    $("#divlongitud").show();
+    //$("#divLactitud").show();
+    //$("#divlongitud").show();
     $("#divEmail").show();
     $("#divTelefono").show();
     $("#divDescripcion").show();
     $("#divAprobado").show();
+    $("#divDireccion").show();
 }
 
 function mostrarCamposOferente() {
@@ -156,9 +158,10 @@ function mostrarCamposOferente() {
     $("#divTelefono").show();
     $("#divEmail").show();
     $("#divTelefono").show();
-    $("#divLactitud").show();
-    $("#divlongitud").show();
+   // $("#divLactitud").show();
+   // $("#divlongitud").show();
     $("#divAprobado").show();
+    $("#divDireccion").show();
 }
 
 

@@ -38,8 +38,8 @@
             
             <script type="text/javascript">
                
-                dom="Daniel Mora        114730950 \n\Greivin Rojas      402110275 \n\Ismael Salazar     402120199";
-                alert(dom);
+               // dom="Daniel Mora        114730950 \n\Greivin Rojas      402110275 \n\Ismael Salazar     402120199";
+               // alert(dom);
             </script>
 </body>
 </html>

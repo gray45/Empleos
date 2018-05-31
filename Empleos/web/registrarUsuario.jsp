@@ -12,6 +12,9 @@
         <title>JSP Page</title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe7lRExeChAWuRiEpRkE-l8aldatSkkAw&libraries=places"></script>
+         <script src="Js/Mapa_de_usuario.js" type="text/javascript"></script>
+         <script src="Js/Geolocalizacion.js" type="text/javascript"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/botsnip.css" />
         <link rel="stylesheet" href="css/slidr.css" type="text/css"/>
@@ -170,6 +173,17 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group" style="display: none" id="divDireccion">
+                                        <label for="inputDireccion">Dirección*</label>    
+                                        <div class="input-group">                                               
+                                            <input type="text" class="form-control" id="inputDireccion" autofocus="autofocus" placeholder="Presione el botón → " size="100%" 
+                                                   >
+                                            <span id="Obtener_ubicacion" class=" input-group-addon">
+                                                <span class="active glyphicon glyphicon-screenshot" onclick="Obtener_ubicacion( )"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                   
 
 
 
@@ -188,47 +202,11 @@
                     <!-- Include all compiled plugins (below), or include individual files as needed -->
                     <script src="js/bootstrap.min.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-                    <!--
-                    
-                    <form method="post" action="Usuarioadd">
-                <table>
-                <tr>
-                      <td>Username</td>   
-                      <td><input type="text" name="username"/></td>
-                </tr>
-                <tr>
-                      <td>Password</td>   
-                      <td><input type="text" name="password"/></td>
-                </tr>
-                <tr>
-                      <td>Tipo</td>   
-                      <td><input type="text" name="tipo"/></td>
-                </tr>
-                
-                <tr colspan="2">
-                    <td><input type="submit" value="Guardar" /></td>
-                </tr>
-               
-                
-                </table>
-                
-            </form>-->
                 </div>
 
             </div>
 
         </div>
+                <div id="Mapa_de_usuario"></div>
     </body>
 </html>
