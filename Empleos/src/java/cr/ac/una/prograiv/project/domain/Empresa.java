@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.project.domain;
-// Generated 29/03/2018 02:50:19 PM by Hibernate Tools 4.3.1
+// Generated 31/05/2018 12:22:08 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -20,6 +20,7 @@ public class Empresa  implements java.io.Serializable {
      private String telefono;
      private String descripcion;
      private String aprobada;
+     private String direccion;
      private Set puestos = new HashSet(0);
 
     public Empresa() {
@@ -35,9 +36,8 @@ public class Empresa  implements java.io.Serializable {
         this.telefono = telefono;
         this.descripcion = descripcion;
         this.aprobada = aprobada;
-        puestos=new HashSet(0);
     }
-    public Empresa(Usuario usuario, String nombre, String lactitud, String longitud, String email, String telefono, String descripcion, String aprobada, Set puestos) {
+    public Empresa(Usuario usuario, String nombre, String lactitud, String longitud, String email, String telefono, String descripcion, String aprobada, String direccion, Set puestos) {
        this.usuario = usuario;
        this.nombre = nombre;
        this.lactitud = lactitud;
@@ -46,6 +46,7 @@ public class Empresa  implements java.io.Serializable {
        this.telefono = telefono;
        this.descripcion = descripcion;
        this.aprobada = aprobada;
+       this.direccion = direccion;
        this.puestos = puestos;
     }
    
@@ -111,6 +112,13 @@ public class Empresa  implements java.io.Serializable {
     
     public void setAprobada(String aprobada) {
         this.aprobada = aprobada;
+    }
+    public String getDireccion() {
+        return this.direccion;
+    }
+    
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
     public Set getPuestos() {
         return this.puestos;

@@ -41,12 +41,12 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="empleos"/>
+  <table-filter match-name="carateristicaspuesto"/>
+  <table-filter match-name="carateristicas"/>
+  <table-filter match-name="puesto"/>
   <table-filter match-name="oferente"/>
   <table-filter match-name="empresa"/>
-  <table-filter match-name="usuario"/>
-  <table-filter match-name="carateristicaspuesto"/>
-  <table-filter match-name="carateristicasoferente"/>
-  <table-filter match-name="puesto"/>
   <table-filter match-name="puestooferente"/>
-  <table-filter match-name="carateristicas"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="carateristicasoferente"/>
 </hibernate-reverse-engineering>

@@ -57,6 +57,7 @@ public class addUser extends HttpServlet {
             String descripcion = request.getParameter("descripcion");
             String aprobado = request.getParameter("aprobado");
             String nacionalidad = request.getParameter("nacionalidad");
+            String direccion = request.getParameter("direccion");
             
             
             Usuario user = new Usuario(username, password, tipo);
@@ -73,7 +74,8 @@ public class addUser extends HttpServlet {
                 case "2":
                     
                     Empresa empresa = new Empresa(user2,nombre,lactitud,longitud,email,telefono,descripcion,aprobado);
-                   EmpresaDao empresaDao = new EmpresaDao();
+                   empresa.setDireccion(direccion);
+                    EmpresaDao empresaDao = new EmpresaDao();
                    empresaDao.save(empresa);
                    response.setStatus(200);
                     request.getRequestDispatcher("Slider").forward(request, response);
@@ -83,6 +85,7 @@ public class addUser extends HttpServlet {
                 case "3":
                     
                     Oferente oferente = new Oferente(user2, cedula, nombre, primerApe, nacionalidad, telefono, email, lactitud, longitud, Integer.parseInt(aprobado));
+                    oferente.setDireccion(direccion);
                     OferenteDao oferenteDao = new OferenteDao();
                     oferenteDao.save(oferente);
                     request.getRequestDispatcher("Slider").forward(request, response);

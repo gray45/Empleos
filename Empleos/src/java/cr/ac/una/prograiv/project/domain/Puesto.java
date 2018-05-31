@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.project.domain;
-// Generated 29/03/2018 02:50:19 PM by Hibernate Tools 4.3.1
+// Generated 31/05/2018 12:22:08 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

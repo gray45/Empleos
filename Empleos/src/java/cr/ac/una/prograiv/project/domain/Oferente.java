@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.project.domain;
-// Generated 29/03/2018 02:50:19 PM by Hibernate Tools 4.3.1
+// Generated 31/05/2018 12:22:08 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -22,6 +22,8 @@ public class Oferente  implements java.io.Serializable {
      private String lactitud;
      private String longitud;
      private int contratado;
+     private String direccion;
+     private byte[] curriculum;
      private Set carateristicasoferentes = new HashSet(0);
      private Set puestooferentes = new HashSet(0);
 
@@ -41,7 +43,7 @@ public class Oferente  implements java.io.Serializable {
         this.longitud = longitud;
         this.contratado = contratado;
     }
-    public Oferente(Usuario usuario, String cedula, String nombre, String primerApellido, String nacionalidad, String telefono, String email, String lactitud, String longitud, int contratado, Set carateristicasoferentes, Set puestooferentes) {
+    public Oferente(Usuario usuario, String cedula, String nombre, String primerApellido, String nacionalidad, String telefono, String email, String lactitud, String longitud, int contratado, String direccion, byte[] curriculum, Set carateristicasoferentes, Set puestooferentes) {
        this.usuario = usuario;
        this.cedula = cedula;
        this.nombre = nombre;
@@ -52,6 +54,8 @@ public class Oferente  implements java.io.Serializable {
        this.lactitud = lactitud;
        this.longitud = longitud;
        this.contratado = contratado;
+       this.direccion = direccion;
+       this.curriculum = curriculum;
        this.carateristicasoferentes = carateristicasoferentes;
        this.puestooferentes = puestooferentes;
     }
@@ -132,6 +136,20 @@ public class Oferente  implements java.io.Serializable {
     
     public void setContratado(int contratado) {
         this.contratado = contratado;
+    }
+    public String getDireccion() {
+        return this.direccion;
+    }
+    
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    public byte[] getCurriculum() {
+        return this.curriculum;
+    }
+    
+    public void setCurriculum(byte[] curriculum) {
+        this.curriculum = curriculum;
     }
     public Set getCarateristicasoferentes() {
         return this.carateristicasoferentes;

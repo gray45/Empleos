@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.project.domain;
-// Generated 29/03/2018 02:50:19 PM by Hibernate Tools 4.3.1
+// Generated 31/05/2018 12:22:08 PM by Hibernate Tools 4.3.1
 
 
 
@@ -12,13 +12,20 @@ public class Carateristicaspuesto  implements java.io.Serializable {
      private Integer id;
      private Carateristicas carateristicas;
      private Puesto puesto;
+     private String nivel;
 
     public Carateristicaspuesto() {
     }
 
+	
     public Carateristicaspuesto(Carateristicas carateristicas, Puesto puesto) {
+        this.carateristicas = carateristicas;
+        this.puesto = puesto;
+    }
+    public Carateristicaspuesto(Carateristicas carateristicas, Puesto puesto, String nivel) {
        this.carateristicas = carateristicas;
        this.puesto = puesto;
+       this.nivel = nivel;
     }
    
     public Integer getId() {
@@ -41,6 +48,13 @@ public class Carateristicaspuesto  implements java.io.Serializable {
     
     public void setPuesto(Puesto puesto) {
         this.puesto = puesto;
+    }
+    public String getNivel() {
+        return this.nivel;
+    }
+    
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
 

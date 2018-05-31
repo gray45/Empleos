@@ -15,11 +15,11 @@ import org.hibernate.Transaction;
  * Hibernate Utility class with a convenient method to get Session Factory
  * object.
  *
- * @author graven
+ * @author grave
  */
 public class HibernateUtil {
 
-    private static final SessionFactory sessionFactory;
+ private static final SessionFactory sessionFactory;
     private Session sesion;
     private Transaction transac;
     

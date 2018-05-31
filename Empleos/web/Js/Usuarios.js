@@ -23,7 +23,8 @@ function add() {
             lactitud: $("#lactitud").val(),
             longitud: $("#longitud").val(),
             aprobado: $("#aprobado").val(),
-            descripcion: $("#descripcion").val()
+            descripcion: $("#descripcion").val(),
+            direccion: $("#inputDireccion").val()
         },
 
         dataType: "text",

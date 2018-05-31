@@ -1,5 +1,5 @@
 package cr.ac.una.prograiv.project.domain;
-// Generated 29/03/2018 02:50:19 PM by Hibernate Tools 4.3.1
+// Generated 31/05/2018 12:22:08 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,7 +13,6 @@ public class Carateristicas  implements java.io.Serializable {
 
      private Integer idCarateristicas;
      private String descripcion;
-     private String grado;
      private int padre;
      private Set carateristicasoferentes = new HashSet(0);
      private Set carateristicaspuestos = new HashSet(0);
@@ -22,14 +21,12 @@ public class Carateristicas  implements java.io.Serializable {
     }
 
 	
-    public Carateristicas(String descripcion, String grado, int padre) {
+    public Carateristicas(String descripcion, int padre) {
         this.descripcion = descripcion;
-        this.grado = grado;
         this.padre = padre;
     }
-    public Carateristicas(String descripcion, String grado, int padre, Set carateristicasoferentes, Set carateristicaspuestos) {
+    public Carateristicas(String descripcion, int padre, Set carateristicasoferentes, Set carateristicaspuestos) {
        this.descripcion = descripcion;
-       this.grado = grado;
        this.padre = padre;
        this.carateristicasoferentes = carateristicasoferentes;
        this.carateristicaspuestos = carateristicaspuestos;
@@ -48,13 +45,6 @@ public class Carateristicas  implements java.io.Serializable {
     
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-    public String getGrado() {
-        return this.grado;
-    }
-    
-    public void setGrado(String grado) {
-        this.grado = grado;
     }
     public int getPadre() {
         return this.padre;
