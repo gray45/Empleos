@@ -123,7 +123,7 @@ public final class listaEmpresas_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
+      out.write("<script src=\"Js/caracteristicas.js\" type=\"text/javascript\"></script>\n");
       out.write("            ");
 
                 
@@ -134,7 +134,7 @@ public final class listaEmpresas_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("            <div class=\"hidden-xs display-table-cell v-align box\" id=\"navigation\">\n");
       out.write("                \n");
       out.write("                <div class=\"navi\">\n");
-      out.write("                    <ul>\n");
+      out.write("                    <ul id=\"barra\" class=\"barra\">\n");
       out.write("                        \n");
       out.write("                       \n");
       out.write("                        ");
@@ -201,11 +201,13 @@ public final class listaEmpresas_jsp extends org.apache.jasper.runtime.HttpJspBa
                         
       out.write("\n");
       out.write("                        \n");
-      out.write("                        <li><a href=\"Slider\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Home</span></a></li>\n");
       out.write("                        \n");
       out.write("                        ");
  } 
       out.write("\n");
+      out.write("                        \n");
+      out.write("                        <li id=\"caract\" onclick=\"hijos()\"><a id = \"a\"><i class=\"fa fa-search\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Caracteristicas</span></a>\n");
+      out.write("                         </li>\n");
       out.write("\n");
       out.write("                    </ul>\n");
       out.write("                </div>\n");

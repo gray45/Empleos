@@ -16,12 +16,12 @@
                 
                 for(int i=0;i<puestos.size();i++){
                  %>
-                 <div class="mySlides" style="width: 100%">
+                 <div class="mySlides" style="width: 120%; background-color: slategrey">
                      <h3 align="center">Puestos Publicos</h3>
-                     <div> <h3><b>ID:</b>              <%out.println(puestos.get(i).getIdPuesto());%></h3></div>
-                     <div> <h3><b>Descripcion:</b> <%out.println(puestos.get(i).getDescripcion());%></h3> </div>
-                     <div> <h3><b>Sueldo:</b> <%out.println(puestos.get(i).getSueldo());%></h3></div>
-                     <div> <h3><b>Tipo:</b>         <%out.println(puestos.get(i).getTipo());%></h3> </div>
+                     <div> <h3><b> ID:</b>              <%out.println(puestos.get(i).getIdPuesto());%></h3></div>
+                     <div> <h3><b> Descripcion:</b> <%out.println(puestos.get(i).getDescripcion());%></h3> </div>
+                     <div> <h3><b> Sueldo:</b> <%out.println(puestos.get(i).getSueldo());%></h3></div>
+                     <div> <h3><b> Tipo:</b>         <%out.println(puestos.get(i).getTipo());%></h3> </div>
                      
                  </div>
         <%   

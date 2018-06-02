@@ -14,17 +14,6 @@
         <property name="padre" type="int">
             <column name="padre" not-null="true" />
         </property>
-        <set name="carateristicasoferentes" table="carateristicasoferente" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="Carateristicas_idCarateristicas" not-null="true" />
-            </key>
-            <one-to-many class="cr.ac.una.prograiv.project.domain.Carateristicasoferente" />
-        </set>
-        <set name="carateristicaspuestos" table="carateristicaspuesto" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="Carateristicas_idCarateristicas" not-null="true" />
-            </key>
-            <one-to-many class="cr.ac.una.prograiv.project.domain.Carateristicaspuesto" />
-        </set>
+        
     </class>
 </hibernate-mapping>

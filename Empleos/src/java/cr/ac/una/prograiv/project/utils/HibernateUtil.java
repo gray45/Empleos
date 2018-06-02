@@ -19,7 +19,7 @@ import org.hibernate.Transaction;
  */
 public class HibernateUtil {
 
- private static final SessionFactory sessionFactory;
+    private static final SessionFactory sessionFactory;
     private Session sesion;
     private Transaction transac;
     

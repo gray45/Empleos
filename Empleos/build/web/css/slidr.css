@@ -12,6 +12,7 @@ and open the template in the editor.
        	width: 100%;
 	margin: 30px;
 	overflow: hidden;
+        
 }
 .slider ul {
 	display: flex;
@@ -19,16 +20,20 @@ and open the template in the editor.
 	width: 500px;
 	
 	animation: cambio 20s infinite alternate linear;
+        
 }
 
 .slider li {
 	width: 100%;
 	list-style: none;
+        background-color: #232344;
+        
 }
 
 .slider img {
         align-content: center;
 	width: 80%;
+        
 }
 
 @keyframes cambio {

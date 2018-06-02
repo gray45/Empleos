@@ -1,7 +1,7 @@
 <%-- any content can be specified here e.g.: --%>
 <%@page import="cr.ac.una.prograiv.project.domain.Usuario"%>
 <%@ page pageEncoding="UTF-8" %>
-
+<script src="Js/caracteristicas.js" type="text/javascript"></script>
             <%
                 
                 Usuario u= (Usuario) session.getAttribute("usuario");
@@ -10,7 +10,7 @@
             <div class="hidden-xs display-table-cell v-align box" id="navigation">
                 
                 <div class="navi">
-                    <ul>
+                    <ul id="barra" class="barra">
                         
                        
                         <% if(u!=null){
@@ -65,9 +65,11 @@
                         }
                         %>
                         
-                        <li><a href="Slider"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                         
                         <% } %>
+                        
+                        <li id="caract" onclick="hijos()"><a id = "a"><i class="fa fa-search" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Caracteristicas</span></a>
+                         </li>
 
                     </ul>
                 </div>

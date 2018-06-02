@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="css/botsnip.css" />
 <link rel="stylesheet" href="css/slidr.css" type="text/css"/>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <div id="wrapper">

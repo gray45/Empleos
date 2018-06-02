@@ -123,7 +123,7 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
+      out.write("<script src=\"Js/caracteristicas.js\" type=\"text/javascript\"></script>\n");
       out.write("            ");
 
                 
@@ -201,11 +201,15 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
                         
       out.write("\n");
       out.write("                        \n");
-      out.write("                        <li><a href=\"Slider\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Home</span></a></li>\n");
       out.write("                        \n");
       out.write("                        ");
  } 
       out.write("\n");
+      out.write("                        \n");
+      out.write("                         <li><a class=\"nav-link dropdown-toggle\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" ><i class=\"fa fa-search\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Caracteristicas</span></a>\n");
+      out.write("                             <div class=\"dropdown-menu rightMenu\" ><a ><i class=\"fa fa-search\" aria-hidden=\"true\"></i><span class=\"hidden-xs hidden-sm\">Caracteristicas</span></a>\n");
+      out.write("                             </div>\n");
+      out.write("                             </li>\n");
       out.write("\n");
       out.write("                    </ul>\n");
       out.write("                </div>\n");

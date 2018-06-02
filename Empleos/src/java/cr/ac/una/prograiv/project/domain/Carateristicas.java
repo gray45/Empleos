@@ -14,9 +14,7 @@ public class Carateristicas  implements java.io.Serializable {
      private Integer idCarateristicas;
      private String descripcion;
      private int padre;
-     private Set carateristicasoferentes = new HashSet(0);
-     private Set carateristicaspuestos = new HashSet(0);
-
+     
     public Carateristicas() {
     }
 
@@ -25,13 +23,7 @@ public class Carateristicas  implements java.io.Serializable {
         this.descripcion = descripcion;
         this.padre = padre;
     }
-    public Carateristicas(String descripcion, int padre, Set carateristicasoferentes, Set carateristicaspuestos) {
-       this.descripcion = descripcion;
-       this.padre = padre;
-       this.carateristicasoferentes = carateristicasoferentes;
-       this.carateristicaspuestos = carateristicaspuestos;
-    }
-   
+    
     public Integer getIdCarateristicas() {
         return this.idCarateristicas;
     }
@@ -53,21 +45,7 @@ public class Carateristicas  implements java.io.Serializable {
     public void setPadre(int padre) {
         this.padre = padre;
     }
-    public Set getCarateristicasoferentes() {
-        return this.carateristicasoferentes;
-    }
     
-    public void setCarateristicasoferentes(Set carateristicasoferentes) {
-        this.carateristicasoferentes = carateristicasoferentes;
-    }
-    public Set getCarateristicaspuestos() {
-        return this.carateristicaspuestos;
-    }
-    
-    public void setCarateristicaspuestos(Set carateristicaspuestos) {
-        this.carateristicaspuestos = carateristicaspuestos;
-    }
-
 
 
 

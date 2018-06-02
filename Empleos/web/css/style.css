@@ -12,8 +12,7 @@ and open the template in the editor.
         height: 100%;
 		width: 40%;
 
-    border-radius: 7px;
-    /* background-color: aquamarine; */
+    border-radius: 7px; 
 
     margin-top: 2.5%;
     /* margin-left: 2.5%; */
@@ -137,4 +136,16 @@ span.input-group-addon i {
 .login-register{
 	font-size: 11px;
 	text-align: center;
+}
+
+.navi .barra ul {
+    /*display: none;*/
+}
+
+.navi .barra ul li a{
+    background: #232344;
+}
+
+.navi .barra .segundo ul li a{
+    background: #828a99;
 }
