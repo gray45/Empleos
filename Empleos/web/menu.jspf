@@ -75,6 +75,31 @@
                 </div>
                         
             </div>
+                        <div class="row" >
+                            <div class = "col-md-4 col-xs-12 col-sm-12 col-lg-4"></div>
+                            
+                            <div class = "col-md-8 col-xs-12 col-sm-12 col-lg-8">
+                                <form >
+                                                                    
+                                    <div class="form-group" id="groupNivel">
+                                        <label for="nivel">Nivel de conocimiento</label>
+                                        <select id="inputTipoLicencia" class="form-control" style="height: 50%;">
+                                            <option value="Experto">Experto</option>
+                                            <option value="Intermedio">Intermedio</option>
+                                            <option value="Poco">Poco</option>
+                                            
+                                        </select>
+                                    </div>
+                              
+                                <div class="form-group" >
+                                    <input type="hidden" value="agregarChofer" id="choferAction"/>
+                                    <input type="hidden"  id="caracter"/>
+                                    <button type="submit" class="btn btn-success" onclick="carrito()">Guardar</button>
+                                   </div>
+                                
+                            </form>
+                                </div>
+                        </div>
 
 
 
