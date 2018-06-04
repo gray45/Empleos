@@ -25,7 +25,7 @@ public class EmpresaBl extends BaseBl implements iBaseBl <Empresa,Integer>{
     @Override
     public void merge(Empresa obj) {
         EmpresaDao empresa = new EmpresaDao();
-        empresa.save(obj);
+        empresa.merge(obj);
        // this.getDao(obj.getClass().getName()).merge(obj);
     }
 

@@ -85,7 +85,12 @@
                         out.println("</td>");
                         
                         out.println("<td>");
-                        out.println(empresas.get(i).getAprobada());
+                        int ap= Integer.parseInt(empresas.get(i).getAprobada());
+                        if(ap==1){
+                            out.println("<input type='checkbox' checked id='aprobada' onclick='desaprobar("+empresas.get(i).getIdEmpresa()+")'>"); 
+                        }else{
+                            out.println("<input type='checkbox' id='aprobada' onclick='aprobar("+empresas.get(i).getIdEmpresa()+")'>"); 
+                        }
                         out.println("</td>");
                         
                         out.println("</tr>");
@@ -102,6 +107,53 @@
         
         
         
-      
+            <script>
+                function desaprobar(id) {
+                    
+                        
+                        $.ajax({type: "POST",
+                            url: "desaprobar",
+                            data: {
+                                idEmpresa: id
+                            },
+
+                            dataType: "text",
+                            success: function (data) {
+                                var respuestaTxt = data.substring(2);
+                                var tipoRespuesta = data.substring(0, 2);
+                                if (tipoRespuesta === "E~") {
+                                    alert("error");
+                                } else {
+                                    alert("desaprobado");
+                                }
+                            }
+                        });
+                        location.reload();
+                    }
+                function aprobar(id){
+                    $.ajax({type: "POST",
+                            url: "aprobar",
+                            data: {
+                                idEmpresa: id
+                            },
+                            dataType: "text",
+                            success: function (data) {
+                                var respuestaTxt = data.substring(2);
+                                var tipoRespuesta = data.substring(0, 2);
+                                if (tipoRespuesta === "E~") {
+                                    alert("error");
+                                } else {
+                                    alert("desaprobado");
+                                }
+                            }
+                        });
+                        
+                        location.reload();
+                };
+                
+            
+            </script>
+                    <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -73,9 +73,9 @@
                         <td><% out.println(puestos.get(i).getSueldo()); %></td>
                         <td><% out.println(puestos.get(i).getTipo()); %></td>
                         <td><% if(puestos.get(i).getDisponible()==1){ 
-                                out.println("Si");
+                                out.println("<input type='checkbox' checked id='disponible' onclick='quitar("+puestos.get(i).getIdPuesto()+")'>");
                                 }else{
-                                    out.println("No");
+                                    out.println("<input type='checkbox' id='disponible' onclick='poner("+puestos.get(i).getIdPuesto()+")'>");
                                 } %></td>
                         
                     </tr>
@@ -92,9 +92,49 @@
         
         </div>
         
+        <script>
+    function quitar(id) {
+                                     
+                        $.ajax({type: "POST",
+                            url: "disponible",
+                            data: {
+                                idPuesto: id,
+                                disponible: 1
+                            },
+
+                            dataType: "text",
+                            success: function (data) {
+                                var respuestaTxt = data.substring(2);
+                                var tipoRespuesta = data.substring(0, 2);
+                                if (tipoRespuesta === "E~") {
+                                    alert("error");
+                                } else {
+                                    alert("desaprobado");
+                                }
+                            }
+                        });
+                        
+                    }
+                function poner(id){
+                    $.ajax({type: "POST",
+                            url: "disponible",
+                            data: {
+                                idPuesto: id,
+                                disponible: 2
+                            },
+                            dataType: "text",
+                            success: function (data) {
+                                var respuestaTxt = data.substring(2);
+                                var tipoRespuesta = data.substring(0, 2);
+                                if (tipoRespuesta === "E~") {
+                                    alert("error");
+                                } else {
+                                    alert("desaprobado");
+                                }
+                            }
+                        });
+                };
         
-        
-        
-        
+        </script>
     </body>
 </html>

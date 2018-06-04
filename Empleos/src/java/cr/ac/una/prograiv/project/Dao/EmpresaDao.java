@@ -132,5 +132,17 @@ public class EmpresaDao extends HibernateUtil implements IBaseDao<Empresa, Integ
         }
         
     }
+    public void excecuteQuery(String query){
+        try{
+            iniciarOperacion();
+            getSesion().createQuery(query);
+        }catch(HibernateException he){
+            manejarException(he);
+            throw he;
+        }finally{
+            getSesion().close();
+        }
+        
+    }
 
 }

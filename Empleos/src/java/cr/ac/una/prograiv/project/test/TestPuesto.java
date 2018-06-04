@@ -17,13 +17,13 @@ import java.util.List;
  */
 public class TestPuesto {
     public static void main(String[] args) {
-        //savepuesto();
+        savepuesto();
        // mergeUsuario(3);
         //deleteUsuario();
       // findAllUsuario();
         //findIdUsuario(17);
         //findByName("gray");
-        findquery();
+  //      findquery();
         //findquery("gray","12345");
 
     }
@@ -32,8 +32,8 @@ public class TestPuesto {
         PuestoBl puestobl = new PuestoBl();
         for(int i=0; i<6; i++){
             Empresa empresa = new Empresa();
-            empresa.setIdEmpresa(1);
-        puestobl.save(new Puesto(empresa,"programador", "1200 000", "tele-trabajo", 1));
+            empresa.setIdEmpresa(20);
+        puestobl.save(new Puesto(empresa,"programador", "1200 000", "tele-trabajo", 2));
         }
 }
     

@@ -9,6 +9,7 @@ import cr.ac.una.prograiv.project.Dao.EmpresaDao;
 import cr.ac.una.prograiv.project.domain.Empresa;
 import cr.ac.una.prograiv.project.domain.Usuario;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  *
@@ -16,22 +17,31 @@ import java.util.HashSet;
  */
 public class TestEmpresa {
     static public void main(String[] args){
-        saveEmpresa();
+       // saveEmpresa();
         //deleteEmpresa();
         //mergeEmpresa(2);
+        query();
     }
     
     public static void saveEmpresa() {
-        for(int i =1; i<2; i++){
+        for(int i =1; i<5; i++){
             Usuario u=new Usuario();
             u.setIdUsuario(3);
-            Empresa usul=new Empresa(u, "nombre", "lactitud", "longitud", "email", "telefono", "descripcion", "aprobada");
+            Empresa usul=new Empresa(u, "nombre", "lactitud", "longitud", "email", "telefono", "descripcion", "2");
             EmpresaDao bl1 = new EmpresaDao();
             bl1.save(usul);
         }
         System.out.println("Empresa guardada Correctamente");
     }
         
+    public static void query(){
+        EmpresaDao dao=new EmpresaDao();
+        Empresa em=new Empresa();
+        em=dao.findByID(21);
+        em.setAprobada("1");
+        dao.merge(em);
+        System.out.println(em.getIdEmpresa());
+    }
     
     public static void deleteEmpresa(){
         Empresa usu1 = new Empresa();
